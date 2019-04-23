@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DragonsTV GFX</title>
+	<link rel="stylesheet" type="text/css" href="combined.css">
+	<script src="bower_components/easytimer.js/dist/easytimer.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+
+
+		var score, time, timeStr, currentGraphic, currentPeriod, lowerThird, clockState;
+
+
+		$(document).ready(function() {
+			score = nodecg.Replicant("scoreData"); 
+			time = nodecg.Replicant("timeData"); 
+			timeStr = nodecg.Replicant("timeStr"); 
+			currentGraphic = nodecg.Replicant("currentGraphic"); 
+			currentPeriod = nodecg.Replicant("currentPeriod"); 
+			lowerThird = nodecg.Replicant("lowerThird"); 
+			clockState = nodecg.Replicant('clockState');
+
+			const timerText = $('#TIMER');
+			timer = new easytimer.Timer();
+			timer.start({countdown: true, startValues: {minutes: 30, seconds: 0}});
+			timer.pause();
+			timerText.text(timer.getTimeValues().toString().substring(3));
+			timer.addEventListener('secondsUpdated', function(e) {
+	    		timerText.text(timer.getTimeValues().toString().substring(3));
+	    		timeStr.value = timerText.text();
+			});
+
+			time.on('change', (newValue, oldValue) => {
+				timer.stop();
+				timer.start({countdown: true, startValues: {minutes: newValue["minutes"], seconds: newValue["seconds"]}});
+				timer.pause();
+				timerText.text(timer.getTimeValues().toString().substring(3));
+				timeStr.value = timerText.text();
+			});
+
+			
+			clockState.on('change', (newValue, oldValue) => {
+				if(timer.isRunning()) {
+					timer.pause();
+				} else {
+					timer.start();
+				}
+			});
+
+			score.on('change', (newValue, oldValue) => {
+				$(".HOME_SCORE").text(newValue["homeScore"]);
+				$(".AWAY_SCORE").text(newValue["awayScore"]);
+
+			});
+
+			time.on('change', (newValue, oldValue) => {
+				$(".TIME_MINUTES").text(newValue["minutes"]);
+				$(".TIME_SECONDS").text(newValue["seconds"]);
+			});
+
+			currentGraphic.on('change', (newValue, oldValue) => {
+				show(newValue);
+			});
+
+			currentPeriod.on('change', (newValue, oldValue) => {
+				$(".PERIOD").text(newValue);
+			});
+
+			lowerThird.on('change', (newValue, oldValue) => {
+				$(".TOP_TEXT").text(newValue["upperText"]);
+				$(".BOTTOM_TEXT").text(newValue["lowerText"]);
+			});
+
+		});
+		
+		function show(id) {
+			var elements = document.getElementsByClassName("active");
+
+			while(elements.length > 0){
+				el = elements[0];
+
+				el.classList.add("inactive");
+				el.classList.remove("active");
+			}
+			if(id != "NONE") {
+				document.getElementById(id).classList.add("active");
+				document.getElementById(id).classList.remove("inactive");
+			}
+		}
+	</script>
+
+</head>
+<body>
+	<div id="view" class="scorebug testing-on">
+		<div id="SCOREBUG" class="slideUp inactive">
+			<div class="team" id="HOME" style="background-color: #07294D">
+				<div id="HOME_IMG" class="img" style="background-image: url('https://drexel.edu/~/media/Images/identity/athletics/athletics_primary.ashx?la=en')" ></div>
+				<div id="HOME_TEXT_COLOR" style="color: #FFFFFF" class="text">
+					<div id="HOME_SCORE" class="score HOME_SCORE">0</div>
+					<div class="name">DREXEL</div>
+				</div>
+			</div>
+
+			<div id="middle">
+				<div id="INFO" class="scorebug_visible visible">
+					<div id="TIMER"><span class="TIME_MINUTES">10</span>:<span class="TIME_SECONDS">00</span></div>
+					<hr class="fade" />
+					<div id="PERIOD" class="PERIOD">1st</div>
+				</div>
+			</div>
+
+			<div class="team scorebug_visible" id="AWAY" style="background-color: #e03a3e">
+				<div id="AWAY_IMG" class="img" style="background-image: url('https://s3.amazonaws.com/images.hamlethub.com/hh20mediafolder/1076/201702/Fairfield_Stags_alternate_logo.svg-1486486179.png')"> </div>
+				<div id="AWAY_TEXT_COLOR" style="color: #FFF" class="text scorebug_visible">
+					<div id="AWAY_SCORE" class="score AWAY_SCORE">0</div>
+					<div id="AWAY_NAME" color="#450084" class="name">FAIRFIELD</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="MATCHUP" class="fadeIn inactive">
+			<div class="shadow padded upper matchup_visible">
+				<span id="DATE">April 12, 2019</span> <span class="separator">&mdash;</span> Philadelphia, PA
+			</div>
+			<div class="team" id="HOME" style="background-color: #07294D">
+				<div id="HOME_IMG" class="img" style="background-image: url('https://drexel.edu/~/media/Images/identity/athletics/athletics_primary.ashx?la=en')" ></div>
+				<div id="HOME_TEXT_COLOR" style="color: #FFFFFF" class="text">
+					<div class="name">DREXEL</div>
+					<div class="title">DRAGONS</div>
+				</div>
+			</div>
+			<div class="team" id="AWAY" style="background-color: #e03a3e">
+				<div id="AWAY_IMG" class="img" style="background-image: url('https://s3.amazonaws.com/images.hamlethub.com/hh20mediafolder/1076/201702/Fairfield_Stags_alternate_logo.svg-1486486179.png')"> </div>
+				<div id="AWAY_TEXT_COLOR" style="color: #FFFFFF" class="text">
+					<div id="AWAY_NAME" color="#450084" class="name">FAIRFIELD</div>
+					<div id="AWAY_TITLE" class="title" color="#FFC600">STAGS</div>
+				</div>
+			</div>
+			<div class="grey padded">
+				<div class="matchup_visible padded">
+					<div id="GAME_NAME" class="upper bigger">Drexel Women's Lacrosse</div>
+					<hr>
+					<div id="sponsor">Presented by 
+						<img id="SPONSOR_IMG" width="290" src="https://www.cancergoldstandard.org/sites/default/files/organisation/IBC_RGB_Blue_300.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="FINAL" class="slideUp inactive">
+			<div class="team" id="HOME" style="background-color: #07294D">
+				<div id="HOME_IMG" class="img" style="background-image: url('https://drexel.edu/~/media/Images/identity/athletics/athletics_primary.ashx?la=en')" ></div>
+				<div id="HOME_TEXT_COLOR" style="color: #FFFFFF" class="text">
+					<div id="HOME_SCORE" class="score HOME_SCORE">0</div>
+					<div class="name">DREXEL</div>
+					<div class="title">DRAGONS</div>
+				</div>
+			</div>
+
+			<div class="team" id="AWAY" style="background-color: #e03a3e">
+				<div id="AWAY_IMG" class="img" style="background-image: url('https://s3.amazonaws.com/images.hamlethub.com/hh20mediafolder/1076/201702/Fairfield_Stags_alternate_logo.svg-1486486179.png')"> </div>
+				<div id="AWAY_TEXT_COLOR" style="color: #FFFFFF" class="text">
+					<div id="AWAY_SCORE" class="score AWAY_SCORE">0</div>
+					<div id="AWAY_NAME" class="name">FAIRFIELD</div>
+					<div id="AWAY_TITLE" class="title">STAGS</div>
+				</div>
+			</div>
+
+			<div id="FINAL_TEXT" class="grey padded">
+				<span class="PERIOD">FINAL</span>
+					<div id="sponsor">
+						<img id="SPONSOR_IMG" src="https://www.cancergoldstandard.org/sites/default/files/organisation/IBC_RGB_Blue_300.png" />
+					</div>
+			</div>
+		</div>
+
+		<div id="HOME_LOWER_THIRD" class="slideUp inactive">
+			<div class="workspace">
+				<div class="logo" id="LOGO_BG" style="background-color: #07294D">
+					<div id="LOGO" class="img" style="background-image: url('https://drexel.edu/~/media/Images/identity/athletics/athletics_primary.ashx?la=en')" ></div>
+				</div>
+				<div class="padded">
+					<div id="BOTTOM_TEXT" class="BOTTOM_TEXT">TITLE HERE</div>
+					<div id="TOP_TEXT" class="bigger TOP_TEXT">CAPTION</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="AWAY_LOWER_THIRD" style="border-color: #eee" class="slideUp inactive">
+			<div class="workspace">
+				<div class="logo" id="LOGO_BG" style="background-color: #e03a3e">
+					<div id="LOGO" class="img" style="background-image: url('https://s3.amazonaws.com/images.hamlethub.com/hh20mediafolder/1076/201702/Fairfield_Stags_alternate_logo.svg-1486486179.png')" ></div>
+				</div>
+				<div class="padded">
+					<div id="BOTTOM_TEXT" class="BOTTOM_TEXT">CAPTION</div>
+					<div i="TOP_TEXT" class="bigger TOP_TEXT">TITLE HERE</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

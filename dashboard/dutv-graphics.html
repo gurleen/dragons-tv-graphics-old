@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+	<div class="home-container">
+		<h2>Home Team</h2>
+		Score: <b><span id="home-score">0</span></b><br>
+		<button id="home-plus-1">+1</button><button id="home-minus-1">-1</button>
+	</div>
+	<div class="away-container">
+		<h2>Away Team</h2>
+		Score: <b><span id="away-score">0</span></b><br>
+		<button id="away-plus-1">+1</button><button id="away-minus-1">-1</button>
+	</div>
+
+	<div class="lower-third-container">
+		<h2>Lower Third Control</h2>
+		Upper Text: <input type="text" id="lth-upper-text">
+		Bottom Text: <input type="text" id="lth-bottom-text">
+		<button id="lth-update">Update Lower Third</button>
+	</div>
+
+	<div class="master-container">
+		<h2>Master Control</h2>
+		<h3>Show Graphic:</h3>
+		<div class="btn-group">
+			<button onclick="lth('SCOREBUG')">Scorebug</button>
+			<button onclick="lth('FINAL')">Half/Final/Break</button>
+			<button onclick="lth('MATCHUP')">Matchup</button>
+			<button onclick="lth('HOME_LOWER_THIRD')">Home Lower Third</button>
+			<button onclick="lth('AWAY_LOWER_THIRD')">Away Lower Third</button>
+			<button onclick="lth('NONE')">None</button>
+		</div>
+
+		<h3>Time Control: </h3>
+		<b><span id="time-str">10:00</span></b><br>
+		<button id="toggle-timer">Start/Stop Timer</button><br>
+		Minutes: <input type="text" id="min-update"><br>
+		Seconds: <input type="text" id="sec-update"><br>
+		<button id="time-update">Update Time</button><br>
+		Current Period: <input type="text" id="period"><br>
+		<button id="updatePeriod">Update Period</button>
+	</div>
+
+	<script type="text/javascript">
+		
+		// NodeCG Replicants
+		scoreData = nodecg.Replicant('scoreData');
+		timeData = nodecg.Replicant('timeData');
+		clockState = nodecg.Replicant('clockState');
+		currentGraphic = nodecg.Replicant('currentGraphic');
+		currentPeriod = nodecg.Replicant('currentPeriod');
+		lowerThird = nodecg.Replicant('lowerThird');
+		timeStr = nodecg.Replicant('timeStr');
+
+		// Replicant Initalization
+		scoreData.value = {'homeScore': 0, 'awayScore': 0};
+		timeData.value = {'minutes': 30, 'seconds': 0};
+		currentGraphic.value = 'none';
+		currentPeriod.value = '1st';
+		lowerThird.value = {'upperText': 'Upper Text', 'lowerText': 'Lower Text'};
+
+		// HTML Objects
+		homeScore = document.querySelector('#home-score');
+		homePlusOne = document.querySelector('#home-plus-1');
+		homeMinusOne = document.querySelector('#home-minus-1');
+
+		awayScore = document.querySelector('#away-score');
+		awayPlusOne = document.querySelector('#away-plus-1');
+		awayMinusOne = document.querySelector('#away-minus-1');
+
+		lowerThirdUpper = document.querySelector('#lth-upper-text');
+		lowerThirdBottom = document.querySelector('#lth-bottom-text');
+		lowerThirdUpdate = document.querySelector('#lth-update');
+
+		currentTime = document.querySelector('#time-str');
+		timerToggle = document.querySelector('#toggle-timer');
+
+		minutes = document.querySelector('#min-update');
+		seconds = document.querySelector('#sec-update');
+		updateTime = document.querySelector('#time-update');
+		updatePeriod = document.querySelector('#updatePeriod');
+		period = document.querySelector('#period');
+
+		// Update Graphic Shown
+		function lth(graphic) {
+			currentGraphic.value = graphic;
+		}
+
+		// Button On Clicks
+		homePlusOne.onclick = () => {
+			scoreData.value['homeScore'] += 1;
+			homeScore.innerText = scoreData.value['homeScore'];
+		}
+		homeMinusOne.onclick = () => {
+			scoreData.value['homeScore'] -= 1;
+			homeScore.innerText = scoreData.value['homeScore'];
+		}
+		awayPlusOne.onclick = () => {
+			scoreData.value['awayScore'] += 1;
+			awayScore.innerText = scoreData.value['awayScore'];
+		}
+		awayMinusOne.onclick = () => {
+			scoreData.value['awayScore'] -= 1;
+			awayScore.innerText = scoreData.value['awayScore'];
+		}
+
+		lowerThirdUpdate.onclick = () => {
+			lowerThird.value = {'upperText': lowerThirdUpper.value, 'lowerText': lowerThirdBottom.value};
+		}
+
+		timerToggle.onclick = () => {
+			clockState.value = !clockState.value;
+		}
+
+		updateTime.onclick = () => {
+			timeData.value = {'minutes': parseInt(minutes.value), 'seconds': parseInt(seconds.value)};
+		}
+
+		updatePeriod.onclick = () => {
+			currentPeriod.value = period.value;
+		}
+
+		timeStr.on('change', (newValue, oldValue) => {
+			currentTime.innerText = newValue;
+		});
+
+	</script>
+
+</body>
+</html>

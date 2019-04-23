@@ -1,0 +1,160 @@
+* { margin: 0; 	padding: 0; box-sizing: border-box; }
+
+@font-face {
+    font-family: 'highway_gothicregular';
+    src: url('hwygoth-webfont.woff2') format('woff2'),
+         url('hwygoth-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'highway_gothiclight';
+    src: url('hwygoth-webfont.woff2') format('woff2'),
+         url('hwygoth-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'liquidcrystal';
+    src: url('liquidcrystal-normal.woff2') format('woff2'),
+         url('liquidcrystal-normal.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: "highway_gothicregular", san-serif;
+	background: transparent;
+	overflow: hidden;
+}
+
+#view { width: 1920px; height: 1080px; background-size: cover; position: relative; margin: auto; font-size: 0; color: #fff; }
+
+/* For testing purposes*/
+#view.testing-on { box-shadow: 0 0 10px #000; background-image: url("https://i.ytimg.com/vi/GLG4xgGnjAE/maxresdefault.jpg"); }
+/* */
+
+/* animations */
+/* courtesy of http://www.justinaguilar.com/animations/index.html */
+.fadeIn.active { animation-name: fadeIn; animation-duration: 1.5s; animation-timing-function: ease-in-out; }
+.fadeIn.inactive { animation-name: fadeOut; animation-duration: 1.5s; animation-timing-function: ease-in-out; opacity: 0; }
+
+@keyframes fadeIn {
+	0% { transform: scale(0); opacity: 0.0;	}
+	50% { transform: scale(1.1); }
+	70% { transform: scale(0.9); opacity: 1; }	
+	100% { transform: scale(1); opacity: 1; }
+}
+@keyframes fadeOut {
+	0% { transform: scale(1); opacity: 1; }
+	20% { transform: scale(0.9); opacity: 1; }	
+	40% { transform: scale(1.1); }
+	100% { transform: scale(0); opacity: 0.0; }
+}
+
+
+.slideUp.active { animation-name: slideUp; animation-duration: 1s; animation-timing-function: ease-in-out; }
+.slideUp.inactive { animation-name: slideUpOut; animation-duration: 1s; animation-timing-function: ease-in-out; opacity: 0; }
+
+@keyframes slideUp {
+	0% { transform: translateY(100%); opacity: 0; }		
+	100% { transform: translateY(0%); opacity: 1; }
+}
+
+@keyframes slideUpOut { 
+	0% { transform: translateY(0%); opacity: 1; }
+	100% { transform: translateY(100%); opacity: 0; }
+}
+
+
+/* bootstrap */
+
+.grey { background: rgba(0,0,0,0.7); }
+
+.dark { background: #231f20; }
+.padded { padding: 20px; }
+.center { text-align: center }
+.upper { text-transform: uppercase; }
+.shadow { text-shadow: 2px 4px 3px #333, 2px 4px 10px #333, 2px 4px 10px #333, #666 3px 0px 0px, #666 2.89778px 0.776457px 0px, #666 2.59808px 1.5px 0px, #666 2.12132px 2.12132px 0px, #666 1.5px 2.59808px 0px, #666 0.776457px 2.89778px 0px, #666 0px 3px 0px, #666 -0.776457px 2.89778px 0px, #666 -1.5px 2.59808px 0px, #666 -2.12132px 2.12132px 0px, #666 -2.59808px 1.5px 0px, #666 -2.89778px 0.776457px 0px, #666 -3px 0px 0px, #666 -2.89778px -0.776457px 0px, #666 -2.59808px -1.5px 0px, #666 -2.12132px -2.12132px 0px, #666 -1.5px -2.59808px 0px, #666 -0.776457px -2.89778px 0px, #666 0px -3px 0px, #666 0.776457px -2.89778px 0px, #666 1.5px -2.59808px 0px, #666 2.12132px -2.12132px 0px, #666 2.59808px -1.5px 0px, #666 2.89778px -0.776457px 0px, #666 3px 0px 0px; }
+hr { border: 0px; height: 10px;}
+hr.fade { border: 0; height: 2px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); }
+hr.fadeleft { border: 0; height: 2px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); }
+
+.separator { margin: 20px; }
+.bigger { font-size: 130%; }
+
+
+
+.matchup_visible, .scorebug_visible { display: none; }
+
+.team { box-sizing: border-box; position: relative; padding: 30px; vertical-align: bottom; }
+
+/* MATCHUP */
+
+#MATCHUP { width: 50%; position: absolute; top: 140px; left: 25%; right: 25%; overflow: hidden; }
+#MATCHUP .team { width: 50%; display: inline-block; height: 440px; }
+
+#MATCHUP .text .name { font-size: 45px; line-height: 45px; }
+#MATCHUP .text .title { display: block; font-size: 60px; line-height: 60px; }
+#MATCHUP .text { display: block; position: absolute; bottom: 0; padding: 5px 15px; z-index: 3; letter-spacing: 1px; }
+#MATCHUP #AWAY .text { right: 0; text-align: right; }
+#MATCHUP #HOME .text { left: 0; text-align: left; }
+
+#MATCHUP .team .img { position: absolute; top: 0; left: 0; right: 0; bottom: 100px; background-size: 80% auto; background-repeat: no-repeat; background-position: center center; z-index: 1; }
+
+#MATCHUP .grey { padding: 20px; }
+#MATCHUP .matchup_visible { display: block; font-size: 40px; text-align: center; letter-spacing: 1px;  }
+#MATCHUP #sponsor { font-size: 39px; text-align: center; border: 10px; }
+#MATCHUP #sponsor img { vertical-align: middle; }
+
+/* SCOREBUG */
+
+#SCOREBUG .scorebug_visible { display: block; text-align: center; }
+#SCOREBUG { width: 50%; position: absolute; bottom: 100px; left: 25%; right: 25%; overflow: hidden; background: #231f20; }
+#SCOREBUG .team { width: 42%; display: inline-block; vertical-align: middle; }
+#SCOREBUG .team .img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; background-size: 50% auto; z-index: 0; opacity: 0.3;}
+#SCOREBUG #HOME .img { background-position: -5% center; }
+#SCOREBUG #AWAY .img { background-position: 105% center; }
+#SCOREBUG .name, #SCOREBUG .score { font-size: 40px; line-height: 40px; }
+#SCOREBUG .text { position: relative; z-index: 2; letter-spacing: 1px; text-shadow: 1px 2px 20px #000; }
+#SCOREBUG #HOME .name { text-align: left; }
+#SCOREBUG #AWAY .name { text-align: right; }
+#SCOREBUG #HOME .score { float: right; }
+#SCOREBUG #AWAY .score { float: left; }
+#SCOREBUG #middle { width: 16%; display: inline-block; border: 1px solid #333; border-width: 0 1px; }
+#SCOREBUG #middle div { padding: 7px; }
+#SCOREBUG #middle { vertical-align: middle; }
+#SCOREBUG #TIMER { font-size: 32px;  font-family: "liquidcrystal", san-serif; letter-spacing: 2px; }
+#SCOREBUG #PERIOD { font-size: 20px; }
+
+
+
+#FINAL { width: 50%; position: absolute; bottom: 100px; left: 25%; right: 25%; overflow: hidden; background: #231f20; }
+#FINAL .team { width: 50%; display: inline-block; vertical-align: middle; }
+#FINAL .team .img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; background-size: 50% auto; z-index: 0; opacity: 0.3;}
+#FINAL #HOME .img { background-position: -5% center; }
+#FINAL #AWAY .img { background-position: 105% center; }
+#FINAL .score { font-size: 100px; line-height: 90px; }
+
+#FINAL .text .name { font-size: 40px; line-height: 40px; }
+#FINAL .text .title { font-size: 50px; line-height: 50px; }
+#FINAL #HOME .text { text-align: left; position: relative; z-index: 2;}
+#FINAL #AWAY .text { text-align: right; position: relative; z-index: 2;}
+#FINAL #HOME .score { float: right; }
+#FINAL #AWAY .score { float: left; }
+
+
+#FINAL .grey { padding: 20px; text-align: left; text-indent: 10px; font-size: 40px; letter-spacing: 1px; position: relative; }
+#FINAL #sponsor { float: right; top: 24px; right: 24px; bottom: 24px; position: absolute; }
+#FINAL #sponsor img { height: 100%; width: auto; }
+
+
+
+#HOME_LOWER_THIRD, #AWAY_LOWER_THIRD { width: 40%; position: absolute; bottom: 140px; left: 25%; right: 35%; overflow: hidden; height: 80px; border-bottom: 6px solid #FFC600;}
+#HOME_LOWER_THIRD .workspace, #AWAY_LOWER_THIRD .workspace { position: relative; height: 100%; width: 100%; }
+#HOME_LOWER_THIRD .logo, #AWAY_LOWER_THIRD .logo { position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 0; display: inline-block; }
+#HOME_LOWER_THIRD .img, #AWAY_LOWER_THIRD .img { height: 100%; width: 100%; background-size: 15% auto; background-repeat: no-repeat; opacity: .6; background-position: 0px center; }
+#HOME_LOWER_THIRD .padded, #AWAY_LOWER_THIRD .padded { position: absolute; left: 140px; right: 0; top: 0; bottom: 0;  z-index: 2; font-size: 30px; padding: 15px; line-height: 50px; text-shadow: 1px 2px 20px #000; }
+#HOME_LOWER_THIRD #BOTTOM_TEXT, #AWAY_LOWER_THIRD #BOTTOM_TEXT { float: right; }

@@ -1,0 +1,131 @@
+{
+	"teamInfo": {
+		"schoolName": "Drexel",
+		"schoolType": "University",
+		"teamName": "Dragons",
+		"sport": "Softball",
+		"headCoachName": "Carl Taylor"
+	}, 
+	"players": {
+		"1": {
+			"name": "Emma Dryden",
+			"position": "OF",
+			"year": "SO"
+		},
+		"2": {
+			"name": "Reilly Jo Swanson",
+			"position": "OF",
+			"year": "SO"
+		},
+		"3": {
+			"name": "Jenelle Ladrido",
+			"position": "OF/2B",
+			"year": "SR"
+		},
+		"5": {
+			"name": "Taylor M. Lee",
+			"position": "C",
+			"year": "SR"
+		},
+		"6": {
+			"name": "Brooklyn Daly",
+			"position": "P",
+			"year": "SO"
+		},
+		"7": {
+			"name": "Devon Grippe",
+			"position": "P",
+			"year": "JR"
+		},
+		"8": {
+			"name": "Linda Rush",
+			"position": "INF",
+			"year": "JR"
+		},
+		"9": {
+			"name": "Sophie Halverson",
+			"position": "1B/3B",
+			"year": "SO"
+		},
+		"10": {
+			"name": "Meghan Conroy",
+			"position": "P/INF",
+			"year": "FR"
+		},
+		"11": {
+			"name": "Mehan Trivelpiece",
+			"position": "1B/3B",
+			"year": "SO"
+		},
+		"12": {
+			"name": "Sarah Tannenbaum",
+			"position": "OF",
+			"year": "SO"
+		},
+		"13": {
+			"name": "Taylor Kent",
+			"position": "OF",
+			"year": "JR"
+		},
+		"14": {
+			"name": "Holly Bridgman",
+			"position": "C/OF",
+			"year": "SO"
+		},
+		"15": {
+			"name": "Kristi DiMeo",
+			"position": "1B",
+			"year": "SO"
+		},
+		"16": {
+			"name": "Carly Bowen",
+			"position": "OF",
+			"year": "SO"
+		},
+		"18": {
+			"name": "Christina Toven",
+			"position": "P",
+			"year": "JR"
+		},
+		"19": {
+			"name": "Mari Gardner",
+			"position": "SS/1B",
+			"year": "JR"
+		},
+		"21": {
+			"name": "Hannah Walker",
+			"position": "3B",
+			"year": "JR"
+		},
+		"22": {
+			"name": "Sarah Clinton",
+			"position": "OF",
+			"year": "FR"
+		},
+		"23": {
+			"name": "Julia Roman",
+			"position": "OF",
+			"year": "FR"
+		},
+		"24": {
+			"name": "Sydney Hixenbaugh",
+			"position": "P/INF",
+			"year": "FR"
+		},
+		"25": {
+			"name": "Haley Hulitt",
+			"position": "P/UTL",
+			"year": "SO"
+		},
+		"26": {
+			"name": "Elena Woulfe",
+			"position": "C/INF",
+			"year": "SO"
+		},
+		"34": {
+			"name": "Marisa Browne",
+			"position": "P",
+			"year": "FR"
+		}
+	}
+}

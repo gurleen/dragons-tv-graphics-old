@@ -1,0 +1,41 @@
+{
+  "name": "dutv-graphics-package",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "Gurleen Singh",
+    "email": "gs585@drexel.edu",
+    "url": "gsingh.me"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^1.1.1",
+    "dashboardPanels": [
+      {
+        "name": "dutv-graphics",
+        "title": "DUTV Graphics",
+        "width": 4,
+        "file": "dutv-graphics.html",
+        "headerColor": "#525F78"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "private": true
+}
