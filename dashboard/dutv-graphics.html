@@ -17,6 +17,7 @@
 
 	<div class="lower-third-container">
 		<h2>Lower Third Control</h2>
+		Home Team Presets: <select id="home-lth-presets" onchange="setHomePreset()"></select>
 		Upper Text: <input type="text" id="lth-upper-text">
 		Bottom Text: <input type="text" id="lth-bottom-text">
 		<button id="lth-update">Update Lower Third</button>
@@ -54,6 +55,7 @@
 		currentPeriod = nodecg.Replicant('currentPeriod');
 		lowerThird = nodecg.Replicant('lowerThird');
 		timeStr = nodecg.Replicant('timeStr');
+		homeTeam = nodecg.Replicant('homeTeam');
 
 		// Replicant Initalization
 		scoreData.value = {'homeScore': 0, 'awayScore': 0};
@@ -74,6 +76,7 @@
 		lowerThirdUpper = document.querySelector('#lth-upper-text');
 		lowerThirdBottom = document.querySelector('#lth-bottom-text');
 		lowerThirdUpdate = document.querySelector('#lth-update');
+		homePresets = document.querySelector('#home-lth-presets');
 
 		currentTime = document.querySelector('#time-str');
 		timerToggle = document.querySelector('#toggle-timer');
@@ -84,7 +87,7 @@
 		updatePeriod = document.querySelector('#updatePeriod');
 		period = document.querySelector('#period');
 
-		// Update Graphic Shown
+		// Custom Update Functions
 		function lth(graphic) {
 			currentGraphic.value = graphic;
 		}
@@ -123,9 +126,24 @@
 			currentPeriod.value = period.value;
 		}
 
+		// Replicant on changes
 		timeStr.on('change', (newValue, oldValue) => {
 			currentTime.innerText = newValue;
 		});
+
+		homeTeam.on('change', (newValue, oldValue) => {
+			homeTeam.value = newValue;
+			for(player in newValue.players) {
+				homePresets.options[homePresets.options.length] = new Option(player);
+			}
+		});
+
+		function setHomePreset() {
+			console.log(homePresets.options[homePresets.selectedIndex].value);
+			player = homePresets.options[homePresets.selectedIndex].value;
+			lowerThirdUpper.value = homeTeam.value.players[player].name;
+			lowerThirdBottom.value = '#' + homeTeam.value.players[player].num + ' ' + homeTeam.value.players[player].position
+		}
 
 	</script>
 

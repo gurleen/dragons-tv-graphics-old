@@ -9,121 +9,145 @@
 	"players": {
 		"1": {
 			"name": "Emma Dryden",
+			"num": "1",
 			"position": "OF",
 			"year": "SO"
 		},
 		"2": {
 			"name": "Reilly Jo Swanson",
+			"num": "2",
 			"position": "OF",
 			"year": "SO"
 		},
 		"3": {
 			"name": "Jenelle Ladrido",
+			"num": "3",
 			"position": "OF/2B",
 			"year": "SR"
 		},
 		"5": {
 			"name": "Taylor M. Lee",
+			"num": "5",
 			"position": "C",
 			"year": "SR"
 		},
 		"6": {
 			"name": "Brooklyn Daly",
+			"num": "6",
 			"position": "P",
 			"year": "SO"
 		},
 		"7": {
 			"name": "Devon Grippe",
+			"num": "7",
 			"position": "P",
 			"year": "JR"
 		},
 		"8": {
 			"name": "Linda Rush",
+			"num": "8",
 			"position": "INF",
 			"year": "JR"
 		},
 		"9": {
 			"name": "Sophie Halverson",
+			"num": "9",
 			"position": "1B/3B",
 			"year": "SO"
 		},
 		"10": {
 			"name": "Meghan Conroy",
+			"num": "10",
 			"position": "P/INF",
 			"year": "FR"
 		},
 		"11": {
 			"name": "Mehan Trivelpiece",
+			"num": "11",
 			"position": "1B/3B",
 			"year": "SO"
 		},
 		"12": {
 			"name": "Sarah Tannenbaum",
+			"num": 12,
 			"position": "OF",
 			"year": "SO"
 		},
 		"13": {
 			"name": "Taylor Kent",
+			"num": "13",
 			"position": "OF",
 			"year": "JR"
 		},
 		"14": {
 			"name": "Holly Bridgman",
+			"num": "14",
 			"position": "C/OF",
 			"year": "SO"
 		},
 		"15": {
 			"name": "Kristi DiMeo",
+			"num": "15",
 			"position": "1B",
 			"year": "SO"
 		},
 		"16": {
 			"name": "Carly Bowen",
+			"num": "16",
 			"position": "OF",
 			"year": "SO"
 		},
 		"18": {
 			"name": "Christina Toven",
+			"num": "18",
 			"position": "P",
 			"year": "JR"
 		},
 		"19": {
 			"name": "Mari Gardner",
+			"num": "19",
 			"position": "SS/1B",
 			"year": "JR"
 		},
 		"21": {
 			"name": "Hannah Walker",
+			"num": "21",
 			"position": "3B",
 			"year": "JR"
 		},
 		"22": {
 			"name": "Sarah Clinton",
+			"num": "22",
 			"position": "OF",
 			"year": "FR"
 		},
 		"23": {
 			"name": "Julia Roman",
+			"num": "23",
 			"position": "OF",
 			"year": "FR"
 		},
 		"24": {
 			"name": "Sydney Hixenbaugh",
+			"num": "24",
 			"position": "P/INF",
 			"year": "FR"
 		},
 		"25": {
 			"name": "Haley Hulitt",
+			"num": "25",
 			"position": "P/UTL",
 			"year": "SO"
 		},
 		"26": {
 			"name": "Elena Woulfe",
+			"num": "26",
 			"position": "C/INF",
 			"year": "SO"
 		},
 		"34": {
 			"name": "Marisa Browne",
+			"num": "34",
 			"position": "P",
 			"year": "FR"
 		}
