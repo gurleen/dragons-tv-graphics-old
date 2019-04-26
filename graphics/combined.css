@@ -126,6 +126,7 @@ body {
 hr { border: 0px; height: 10px;}
 hr.faded { border: 0; height: 2px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); }
 hr.fadeleft { border: 0; height: 2px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); }
+sub { vertical-align: middle}
 
 .separator { margin: 20px; }
 .bigger { font-size: 130%; }
@@ -177,7 +178,7 @@ hr.fadeleft { border: 0; height: 2px; background-image: linear-gradient(to right
 
 
 #FINAL { width: 50%; position: absolute; bottom: 100px; left: 25%; right: 25%; overflow: hidden; background: #231f20; }
-#FINAL .team { width: 50%; display: inline-block; vertical-align: middle; }
+#FINAL .team { width: 50%; display: inline-block; vertical-align: middle; text-shadow: 1px 2px 20px #000; }
 #FINAL .team .img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; background-size: 50% auto; z-index: 0; opacity: 0.3;}
 #FINAL #HOME .img { background-position: -5% center; }
 #FINAL #AWAY .img { background-position: 105% center; }
@@ -197,9 +198,22 @@ hr.fadeleft { border: 0; height: 2px; background-image: linear-gradient(to right
 
 
 
-#HOME_LOWER_THIRD, #AWAY_LOWER_THIRD { width: 40%; position: absolute; bottom: 140px; left: 30%; right: 30%; overflow: hidden; height: 80px; border-bottom: 6px solid #FFC600;}
-#HOME_LOWER_THIRD .workspace, #AWAY_LOWER_THIRD .workspace { position: relative; height: 100%; width: 100%; }
+#HOME_LOWER_THIRD, #AWAY_LOWER_THIRD { width: 40%; position: absolute; bottom: 140px; left: 30%; right: 30%; overflow: hidden;  border-bottom: 6px solid #FFC600;}
+#HOME_LOWER_THIRD .workspace, #AWAY_LOWER_THIRD .workspace { position: relative; height: 80px; width: 100%; }
 #HOME_LOWER_THIRD .logo, #AWAY_LOWER_THIRD .logo { position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 0; display: inline-block; }
 #HOME_LOWER_THIRD .img, #AWAY_LOWER_THIRD .img { height: 100%; width: 100%; background-size: 15% auto; background-repeat: no-repeat; opacity: .6; background-position: 0px center; }
 #HOME_LOWER_THIRD .padded, #AWAY_LOWER_THIRD .padded { position: absolute; left: 140px; right: 0; top: 0; bottom: 0;  z-index: 2; font-size: 30px; padding: 15px; line-height: 50px; text-shadow: 1px 2px 20px #000; }
 #HOME_LOWER_THIRD #BOTTOM_TEXT, #AWAY_LOWER_THIRD #BOTTOM_TEXT { float: right; }
+
+
+#HOME_LOWER_THIRD .show_secondary, #HOME_LOWER_THIRD .show_secondary { height: 120px; }
+
+#HOME_LOWER_THIRD .show_secondary .SECONDARY_TEXT, #AWAY_LOWER_THIRD .show_secondary .SECONDARY_TEXT {
+    display: block;
+    font-size: 30px;
+    bottom: 0px;
+    padding: 10px;
+    position: absolute;
+    left: 145px;
+	text-shadow: 1px 2px 20px #000;
+}

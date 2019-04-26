@@ -18,8 +18,9 @@
 	<div class="lower-third-container">
 		<h2>Lower Third Control</h2>
 		Home Team Presets: <select id="home-lth-presets" onchange="setHomePreset()"></select>
-		Upper Text: <input type="text" id="lth-upper-text">
-		Bottom Text: <input type="text" id="lth-bottom-text">
+		Upper Text: <input type="text" id="lth-upper-text"><br>
+		Right Text: <input type="text" id="lth-bottom-text"><br>
+		Secondary Text: <input type="text" id="lth-secondary-text"><br>
 		<button id="lth-update">Update Lower Third</button>
 	</div>
 
@@ -101,6 +102,7 @@
 
 		lowerThirdUpper = document.querySelector('#lth-upper-text');
 		lowerThirdBottom = document.querySelector('#lth-bottom-text');
+		lowerThirdSecondary = document.querySelector('#lth-secondary-text');
 		lowerThirdUpdate = document.querySelector('#lth-update');
 		homePresets = document.querySelector('#home-lth-presets');
 
@@ -149,7 +151,7 @@
 		}
 
 		lowerThirdUpdate.onclick = () => {
-			lowerThird.value = {'upperText': lowerThirdUpper.value, 'lowerText': lowerThirdBottom.value};
+			lowerThird.value = {'upperText': lowerThirdUpper.value, 'lowerText': lowerThirdBottom.value, 'secondaryText': lowerThirdSecondary.value};
 		}
 
 		timerToggle.onclick = () => {

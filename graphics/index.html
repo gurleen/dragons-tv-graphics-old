@@ -72,6 +72,12 @@
 			lowerThird.on('change', (newValue, oldValue) => {
 				$(".TOP_TEXT").text(newValue["upperText"]);
 				$(".BOTTOM_TEXT").text(newValue["lowerText"]);
+				$(".SECONDARY_TEXT").text(newValue["secondaryText"]);
+				if(newValue["secondaryText"] != "") {
+					$(".workspace").addClass("show_secondary")
+				} else {
+					$(".workspace").removeClass("show_secondary")
+				}
 			});
 
 			currentImage.on('change', (newValue, oldValue) => {
@@ -130,7 +136,7 @@
 				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFF" class="text scorebug_visible">
 					<div id="AWAY_SCORE" class="score AWAY_SCORE">0</div>
-					<div id="AWAY_NAME" color="#450084" class="name">FAIRFIELD</div>
+					<div id="AWAY_NAME" color="#450084" class="name">TOWSON</div>
 				</div>
 			</div>
 		</div>
@@ -150,8 +156,8 @@
 			<div class="team" id="AWAY" style="background-color: #cc9900">
 				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFFFFF" class="text">
-					<div id="AWAY_NAME" color="#450084" class="name">FAIRFIELD</div>
-					<div id="AWAY_TITLE" class="title" color="#FFC600">STAGS</div>
+					<div id="AWAY_NAME" color="#450084" class="name"><sub>13</sub> TOWSON</div>
+					<div id="AWAY_TITLE" class="title" color="#FFC600">TIGERS</div>
 				</div>
 			</div>
 			<div class="grey padded">
@@ -179,8 +185,8 @@
 				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFFFFF" class="text">
 					<div id="AWAY_SCORE" class="score AWAY_SCORE">0</div>
-					<div id="AWAY_NAME" class="name">FAIRFIELD</div>
-					<div id="AWAY_TITLE" class="title">STAGS</div>
+					<div id="AWAY_NAME" class="name"><sub>13</sub> TOWSON</div>
+					<div id="AWAY_TITLE" class="title">TIGERS</div>
 				</div>
 			</div>
 
@@ -200,19 +206,22 @@
 				<div class="padded">
 					<div id="BOTTOM_TEXT" class="BOTTOM_TEXT">TITLE HERE</div>
 					<div id="TOP_TEXT" class="bigger TOP_TEXT">CAPTION</div>
+
 				</div>
+				<div class="SECONDARY_TEXT">Secondary Text</div>
 			</div>
 		</div>
 
 		<div id="AWAY_LOWER_THIRD" style="border-color: #eee" class="view slideUp">
-			<div class="workspace">
+			<div class="workspace " >
 				<div class="logo" id="LOGO_BG" style="background-color: #cc9900">
 					<div id="LOGO" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')" ></div>
 				</div>
 				<div class="padded">
 					<div id="BOTTOM_TEXT" class="BOTTOM_TEXT">CAPTION</div>
-					<div i="TOP_TEXT" class="bigger TOP_TEXT">TITLE HERE</div>
+					<div id="TOP_TEXT" class="bigger TOP_TEXT">TITLE HERE</div>
 				</div>
+				<div class="SECONDARY_TEXT">Secondary Text</div>
 			</div>
 		</div>
 
