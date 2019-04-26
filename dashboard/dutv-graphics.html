@@ -32,8 +32,32 @@
 			<button onclick="lth('MATCHUP')">Matchup</button>
 			<button onclick="lth('HOME_LOWER_THIRD')">Home Lower Third</button>
 			<button onclick="lth('AWAY_LOWER_THIRD')">Away Lower Third</button>
+			<button onclick="lth('IMAGE')">Custom Image</button>
 			<button onclick="lth('NONE')">None</button>
 		</div>
+		<br />
+		Custom Image Animation:
+		<select id="image-animation" onchange="">
+			<option value="fade">Fade</option>
+			<option value="grow">Grow</option>
+			<option value="slideUp">Slide Up</option>
+			<option value="slideLeft">Slide Left</option>
+			<option value="slideRight">Slide Right</option>
+		</select>
+		<br />
+		Custom Image Presets:
+		<select id="image-presets" onchange="document.getElementById('image').value = this.value">
+			<option></option>
+			<option value="half_stats.png">Halftime Stats</option>
+			<option value="last_5_both.png">Last 5 BOTH</option>
+			<option value="last_5_drexel.png">Last 5 Drexel</option>
+			<option value="last_5_away.png">Last 5 Away</option>
+			<!--option value="caa_standings.png">CAA Standings</option-->
+			<!--option value="out_of_town.png">Out of Town Scoreboard</option-->
+		</select> <br />
+		Current image: <input type="text" id="image" />
+		<button id="updateImage">Update Image</button>
+		<br />
 
 		<h3>Time Control: </h3>
 		<b><span id="time-str">10:00</span></b><br>
@@ -56,11 +80,13 @@
 		lowerThird = nodecg.Replicant('lowerThird');
 		timeStr = nodecg.Replicant('timeStr');
 		homeTeam = nodecg.Replicant('homeTeam');
+		currentImage = nodecg.Replicant('currentImage');
+		imageAnimation = nodecg.Replicant('imageAnimation');
 
 		// Replicant Initalization
 		scoreData.value = {'homeScore': 0, 'awayScore': 0};
 		timeData.value = {'minutes': 30, 'seconds': 0};
-		currentGraphic.value = 'none';
+		currentGraphic.value = 'NONE';
 		currentPeriod.value = '1st';
 		lowerThird.value = {'upperText': 'Upper Text', 'lowerText': 'Lower Text'};
 
@@ -86,6 +112,14 @@
 		updateTime = document.querySelector('#time-update');
 		updatePeriod = document.querySelector('#updatePeriod');
 		period = document.querySelector('#period');
+		image = document.querySelector('#image');
+		animation = document.querySelector("#image-animation")
+		updateImage = document.querySelector('#updateImage');
+
+
+		// Fix replicant not updating immediately bug
+		let runningHomeScore = 0;
+		let runningAwayScore = 0;
 
 		// Custom Update Functions
 		function lth(graphic) {
@@ -94,20 +128,24 @@
 
 		// Button On Clicks
 		homePlusOne.onclick = () => {
-			scoreData.value['homeScore'] += 1;
-			homeScore.innerText = scoreData.value['homeScore'];
+			runningHomeScore += 1;
+			scoreData.value['homeScore'] = runningHomeScore;
+			homeScore.innerText = runningHomeScore;
 		}
 		homeMinusOne.onclick = () => {
-			scoreData.value['homeScore'] -= 1;
-			homeScore.innerText = scoreData.value['homeScore'];
+			runningHomeScore -= 1;
+			scoreData.value['homeScore'] = runningHomeScore;
+			homeScore.innerText = runningHomeScore;
 		}
 		awayPlusOne.onclick = () => {
-			scoreData.value['awayScore'] += 1;
-			awayScore.innerText = scoreData.value['awayScore'];
+			runningAwayScore += 1;
+			scoreData.value['awayScore'] = runningAwayScore;
+			homeScore.innerText = runningAwayScore;
 		}
 		awayMinusOne.onclick = () => {
-			scoreData.value['awayScore'] -= 1;
-			awayScore.innerText = scoreData.value['awayScore'];
+			runningAwayScore -= 1;
+			scoreData.value['awayScore'] = runningAwayScore;
+			homeScore.innerText = runningAwayScore;
 		}
 
 		lowerThirdUpdate.onclick = () => {
@@ -131,6 +169,26 @@
 			currentTime.innerText = newValue;
 		});
 
+
+		updateImage.onclick = () => {
+			let delay = 0;
+			// prevent user error, ugly transitions by hiding image first
+			if(currentGraphic.value === "IMAGE") {
+				lth("NONE");
+				// No animations are longer than 1.5 seconds
+				delay = 1500
+			}
+
+			// delay new image from showing before animation is up
+			// graphical glitch may occur if animation is not finished and user shows image
+			setTimeout(function(){
+				// add current time so even the SAME image will update
+				currentImage.value =  image.value + "?" + new Date().getTime();
+				// update image animation
+				imageAnimation.value = animation.value;
+			  }, delay);
+		}
+
 		homeTeam.on('change', (newValue, oldValue) => {
 			homeTeam.value = newValue;
 			for(player in newValue.players) {
@@ -139,7 +197,6 @@
 		});
 
 		function setHomePreset() {
-			console.log(homePresets.options[homePresets.selectedIndex].value);
 			player = homePresets.options[homePresets.selectedIndex].value;
 			lowerThirdUpper.value = homeTeam.value.players[player].name;
 			lowerThirdBottom.value = '#' + homeTeam.value.players[player].num + ' ' + homeTeam.value.players[player].position

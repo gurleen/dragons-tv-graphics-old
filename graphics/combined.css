@@ -37,36 +37,81 @@ body {
 /* */
 
 /* animations */
-/* courtesy of http://www.justinaguilar.com/animations/index.html */
-.fadeIn.active { animation-name: fadeIn; animation-duration: 1.5s; animation-timing-function: ease-in-out; }
-.fadeIn.inactive { animation-name: fadeOut; animation-duration: 1.5s; animation-timing-function: ease-in-out; opacity: 0; }
+/* some courtesy of http://www.justinaguilar.com/animations/index.html */
 
-@keyframes fadeIn {
+.view { opacity: 0 }
+
+.grow.active { animation-name: growIn; animation-duration: 1.5s; animation-timing-function: ease-in-out; opacity: 1; }
+.grow.inactive { animation-name: growOut; animation-duration: 1.5s; animation-timing-function: ease-in-out; opacity: 0; }
+
+@keyframes growIn {
 	0% { transform: scale(0); opacity: 0.0;	}
 	50% { transform: scale(1.1); }
-	70% { transform: scale(0.9); opacity: 1; }	
+	70% { transform: scale(0.9); opacity: 1; }
 	100% { transform: scale(1); opacity: 1; }
 }
-@keyframes fadeOut {
+@keyframes growOut {
 	0% { transform: scale(1); opacity: 1; }
-	20% { transform: scale(0.9); opacity: 1; }	
+	20% { transform: scale(0.9); opacity: 1; }
 	40% { transform: scale(1.1); }
 	100% { transform: scale(0); opacity: 0.0; }
 }
 
 
-.slideUp.active { animation-name: slideUp; animation-duration: 1s; animation-timing-function: ease-in-out; }
+.slideUp.active { animation-name: slideUp; animation-duration: 1s; animation-timing-function: ease-in-out; opacity: 1; }
 .slideUp.inactive { animation-name: slideUpOut; animation-duration: 1s; animation-timing-function: ease-in-out; opacity: 0; }
 
 @keyframes slideUp {
-	0% { transform: translateY(100%); opacity: 0; }		
+	0% { transform: translateY(100%); opacity: 0; }
 	100% { transform: translateY(0%); opacity: 1; }
 }
 
-@keyframes slideUpOut { 
+@keyframes slideUpOut {
 	0% { transform: translateY(0%); opacity: 1; }
 	100% { transform: translateY(100%); opacity: 0; }
 }
+
+
+.slideRight.active { animation-name: slideRight; animation-duration: 1s; animation-timing-function: ease-in-out; opacity: 1; }
+.slideRight.inactive { animation-name: slideRightOut; animation-duration: 1s; animation-timing-function: ease-in-out; opacity: 0; }
+
+@keyframes slideRight {
+	0% { transform: translateX(100%); opacity: 0; }
+	100% { transform: translateX(0%); opacity: 1; }
+}
+
+@keyframes slideRightOut {
+	0% { transform: translateX(0%); opacity: 1; }
+	100% { transform: translateX(100%); opacity: 0; }
+}
+
+
+.slideLeft.active { animation-name: slideLeft; animation-duration: 1s; animation-timing-function: ease-in-out; opacity: 1; }
+.slideLeft.inactive { animation-name: slideLeftOut; animation-duration: 1s; animation-timing-function: ease-in-out; opacity: 0; }
+
+@keyframes slideLeft {
+	0% { transform: translateX(-100%); opacity: 0; }
+	100% { transform: translateX(0%); opacity: 1; }
+}
+
+@keyframes slideLeftOut {
+	0% { transform: translateX(0%); opacity: 1; }
+	100% { transform: translateX(-100%); opacity: 0; }
+}
+
+
+.fade.active { animation-name: fadeIn; animation-duration: 1.5s; animation-timing-function: ease-in-out; opacity: 1; }
+.fade.inactive { animation-name: fadeOut; animation-duration: 1.5s; animation-timing-function: ease-in-out; opacity: 0; }
+
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes fadeOut {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
 
 
 /* bootstrap */
@@ -79,7 +124,7 @@ body {
 .upper { text-transform: uppercase; }
 .shadow { text-shadow: 2px 4px 3px #333, 2px 4px 10px #333, 2px 4px 10px #333, #666 3px 0px 0px, #666 2.89778px 0.776457px 0px, #666 2.59808px 1.5px 0px, #666 2.12132px 2.12132px 0px, #666 1.5px 2.59808px 0px, #666 0.776457px 2.89778px 0px, #666 0px 3px 0px, #666 -0.776457px 2.89778px 0px, #666 -1.5px 2.59808px 0px, #666 -2.12132px 2.12132px 0px, #666 -2.59808px 1.5px 0px, #666 -2.89778px 0.776457px 0px, #666 -3px 0px 0px, #666 -2.89778px -0.776457px 0px, #666 -2.59808px -1.5px 0px, #666 -2.12132px -2.12132px 0px, #666 -1.5px -2.59808px 0px, #666 -0.776457px -2.89778px 0px, #666 0px -3px 0px, #666 0.776457px -2.89778px 0px, #666 1.5px -2.59808px 0px, #666 2.12132px -2.12132px 0px, #666 2.59808px -1.5px 0px, #666 2.89778px -0.776457px 0px, #666 3px 0px 0px; }
 hr { border: 0px; height: 10px;}
-hr.fade { border: 0; height: 2px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); }
+hr.faded { border: 0; height: 2px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); }
 hr.fadeleft { border: 0; height: 2px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); }
 
 .separator { margin: 20px; }
@@ -152,7 +197,7 @@ hr.fadeleft { border: 0; height: 2px; background-image: linear-gradient(to right
 
 
 
-#HOME_LOWER_THIRD, #AWAY_LOWER_THIRD { width: 40%; position: absolute; bottom: 140px; left: 25%; right: 35%; overflow: hidden; height: 80px; border-bottom: 6px solid #FFC600;}
+#HOME_LOWER_THIRD, #AWAY_LOWER_THIRD { width: 40%; position: absolute; bottom: 140px; left: 30%; right: 30%; overflow: hidden; height: 80px; border-bottom: 6px solid #FFC600;}
 #HOME_LOWER_THIRD .workspace, #AWAY_LOWER_THIRD .workspace { position: relative; height: 100%; width: 100%; }
 #HOME_LOWER_THIRD .logo, #AWAY_LOWER_THIRD .logo { position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 0; display: inline-block; }
 #HOME_LOWER_THIRD .img, #AWAY_LOWER_THIRD .img { height: 100%; width: 100%; background-size: 15% auto; background-repeat: no-repeat; opacity: .6; background-position: 0px center; }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,20 +9,22 @@
 	<script type="text/javascript">
 
 
-		var score, time, timeStr, currentGraphic, currentPeriod, lowerThird, clockState;
+		var score, time, timeStr, currentGraphic, currentPeriod, lowerThird, clockState, currentImage, imageAnimation;
 
 
 		$(document).ready(function() {
-			score = nodecg.Replicant("scoreData"); 
-			time = nodecg.Replicant("timeData"); 
-			timeStr = nodecg.Replicant("timeStr"); 
-			currentGraphic = nodecg.Replicant("currentGraphic"); 
-			currentPeriod = nodecg.Replicant("currentPeriod"); 
-			lowerThird = nodecg.Replicant("lowerThird"); 
+			score = nodecg.Replicant("scoreData");
+			time = nodecg.Replicant("timeData");
+			timeStr = nodecg.Replicant("timeStr");
+			currentGraphic = nodecg.Replicant("currentGraphic");
+			currentPeriod = nodecg.Replicant("currentPeriod");
+			lowerThird = nodecg.Replicant("lowerThird");
 			clockState = nodecg.Replicant('clockState');
+			currentImage = nodecg.Replicant('currentImage');
+			imageAnimation = nodecg.Replicant('imageAnimation');
 
 			const timerText = $('#TIMER');
-			timer = new easytimer.Timer();
+			let timer = new easytimer.Timer();
 			timer.start({countdown: true, startValues: {minutes: 30, seconds: 0}});
 			timer.pause();
 			timerText.text(timer.getTimeValues().toString().substring(3));
@@ -38,7 +41,7 @@
 				timeStr.value = timerText.text();
 			});
 
-			
+
 			clockState.on('change', (newValue, oldValue) => {
 				if(timer.isRunning()) {
 					timer.pause();
@@ -71,13 +74,27 @@
 				$(".BOTTOM_TEXT").text(newValue["lowerText"]);
 			});
 
+			currentImage.on('change', (newValue, oldValue) => {
+				$("#CUSTOMIMAGE").attr("src",newValue);
+			});
+
+			imageAnimation.on('change', (newValue, oldValue) => {
+				let newClasses = "view "
+				if ($("#IMAGE").hasClass("active")) {
+					newClasses += "active "
+				}
+				$("#IMAGE").attr("class", newClasses + newValue);
+			});
+
 		});
-		
+
+
+
 		function show(id) {
-			var elements = document.getElementsByClassName("active");
+			let elements = document.getElementsByClassName("active");
 
 			while(elements.length > 0){
-				el = elements[0];
+				let el = elements[0];
 
 				el.classList.add("inactive");
 				el.classList.remove("active");
@@ -91,8 +108,8 @@
 
 </head>
 <body>
-	<div id="view" class="scorebug testing-on">
-		<div id="SCOREBUG" class="slideUp inactive">
+	<div id="view" class="scorebug testing-off">
+		<div id="SCOREBUG" class="view slideUp">
 			<div class="team" id="HOME" style="background-color: #07294D">
 				<div id="HOME_IMG" class="img" style="background-image: url('https://drexel.edu/~/media/Images/identity/athletics/athletics_primary.ashx?la=en')" ></div>
 				<div id="HOME_TEXT_COLOR" style="color: #FFFFFF" class="text">
@@ -104,13 +121,13 @@
 			<div id="middle">
 				<div id="INFO" class="scorebug_visible visible">
 					<div id="TIMER"><span class="TIME_MINUTES">10</span>:<span class="TIME_SECONDS">00</span></div>
-					<hr class="fade" />
+					<hr class="faded" />
 					<div id="PERIOD" class="PERIOD">1st</div>
 				</div>
 			</div>
 
-			<div class="team scorebug_visible" id="AWAY" style="background-color: #e03a3e">
-				<div id="AWAY_IMG" class="img" style="background-image: url('https://s3.amazonaws.com/images.hamlethub.com/hh20mediafolder/1076/201702/Fairfield_Stags_alternate_logo.svg-1486486179.png')"> </div>
+			<div class="team scorebug_visible" id="AWAY" style="background-color: #cc9900">
+				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFF" class="text scorebug_visible">
 					<div id="AWAY_SCORE" class="score AWAY_SCORE">0</div>
 					<div id="AWAY_NAME" color="#450084" class="name">FAIRFIELD</div>
@@ -119,9 +136,9 @@
 		</div>
 
 
-		<div id="MATCHUP" class="fadeIn inactive">
+		<div id="MATCHUP" class="view fade">
 			<div class="shadow padded upper matchup_visible">
-				<span id="DATE">April 12, 2019</span> <span class="separator">&mdash;</span> Philadelphia, PA
+				<span id="DATE">April 13, 2019</span> <span class="separator">&mdash;</span> Philadelphia, PA
 			</div>
 			<div class="team" id="HOME" style="background-color: #07294D">
 				<div id="HOME_IMG" class="img" style="background-image: url('https://drexel.edu/~/media/Images/identity/athletics/athletics_primary.ashx?la=en')" ></div>
@@ -130,8 +147,8 @@
 					<div class="title">DRAGONS</div>
 				</div>
 			</div>
-			<div class="team" id="AWAY" style="background-color: #e03a3e">
-				<div id="AWAY_IMG" class="img" style="background-image: url('https://s3.amazonaws.com/images.hamlethub.com/hh20mediafolder/1076/201702/Fairfield_Stags_alternate_logo.svg-1486486179.png')"> </div>
+			<div class="team" id="AWAY" style="background-color: #cc9900">
+				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFFFFF" class="text">
 					<div id="AWAY_NAME" color="#450084" class="name">FAIRFIELD</div>
 					<div id="AWAY_TITLE" class="title" color="#FFC600">STAGS</div>
@@ -139,16 +156,16 @@
 			</div>
 			<div class="grey padded">
 				<div class="matchup_visible padded">
-					<div id="GAME_NAME" class="upper bigger">Drexel Women's Lacrosse</div>
+					<div id="GAME_NAME" class="upper bigger">Drexel Men's Lacrosse</div>
 					<hr>
-					<div id="sponsor">Presented by 
+					<div id="sponsor">Presented by
 						<img id="SPONSOR_IMG" width="290" src="https://www.cancergoldstandard.org/sites/default/files/organisation/IBC_RGB_Blue_300.png" />
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="FINAL" class="slideUp inactive">
+		<div id="FINAL" class="view slideUp">
 			<div class="team" id="HOME" style="background-color: #07294D">
 				<div id="HOME_IMG" class="img" style="background-image: url('https://drexel.edu/~/media/Images/identity/athletics/athletics_primary.ashx?la=en')" ></div>
 				<div id="HOME_TEXT_COLOR" style="color: #FFFFFF" class="text">
@@ -158,8 +175,8 @@
 				</div>
 			</div>
 
-			<div class="team" id="AWAY" style="background-color: #e03a3e">
-				<div id="AWAY_IMG" class="img" style="background-image: url('https://s3.amazonaws.com/images.hamlethub.com/hh20mediafolder/1076/201702/Fairfield_Stags_alternate_logo.svg-1486486179.png')"> </div>
+			<div class="team" id="AWAY" style="background-color: #cc9900">
+				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFFFFF" class="text">
 					<div id="AWAY_SCORE" class="score AWAY_SCORE">0</div>
 					<div id="AWAY_NAME" class="name">FAIRFIELD</div>
@@ -175,7 +192,7 @@
 			</div>
 		</div>
 
-		<div id="HOME_LOWER_THIRD" class="slideUp inactive">
+		<div id="HOME_LOWER_THIRD" class="view slideUp">
 			<div class="workspace">
 				<div class="logo" id="LOGO_BG" style="background-color: #07294D">
 					<div id="LOGO" class="img" style="background-image: url('https://drexel.edu/~/media/Images/identity/athletics/athletics_primary.ashx?la=en')" ></div>
@@ -187,10 +204,10 @@
 			</div>
 		</div>
 
-		<div id="AWAY_LOWER_THIRD" style="border-color: #eee" class="slideUp inactive">
+		<div id="AWAY_LOWER_THIRD" style="border-color: #eee" class="view slideUp">
 			<div class="workspace">
-				<div class="logo" id="LOGO_BG" style="background-color: #e03a3e">
-					<div id="LOGO" class="img" style="background-image: url('https://s3.amazonaws.com/images.hamlethub.com/hh20mediafolder/1076/201702/Fairfield_Stags_alternate_logo.svg-1486486179.png')" ></div>
+				<div class="logo" id="LOGO_BG" style="background-color: #cc9900">
+					<div id="LOGO" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')" ></div>
 				</div>
 				<div class="padded">
 					<div id="BOTTOM_TEXT" class="BOTTOM_TEXT">CAPTION</div>
@@ -198,6 +215,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+
+		<div id="IMAGE" class="view grow"><img id="CUSTOMIMAGE" src="half_stats.png" /></div></div>
 </body>
 </html>
