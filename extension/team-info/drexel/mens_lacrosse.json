@@ -1,0 +1,275 @@
+{
+  "teamInfo": {
+    "schoolName": "Drexel",
+    "schoolType": "University",
+    "teamName": "Dragons",
+    "sport": "Softball",
+    "headCoachName": "Carl Taylor"
+  },
+  "players": {
+    "1": {
+      "name": "Max Spaan",
+      "num": "1",
+      "position": "A",
+      "year": "SR"
+    },
+    "3": {
+      "name": "Marshal King",
+      "num": "3",
+      "position": "M",
+      "year": "SR"
+    },
+    "4": {
+      "name": "Matthew Varian",
+      "num": "4",
+      "position": "A",
+      "year": "JR"
+    },
+    "5": {
+      "name": "Jack Mulcahy",
+      "num": "5",
+      "position": "A",
+      "year": "FR"
+    },
+    "6": {
+      "name": "Casey DuBois",
+      "num": "6",
+      "position": "G",
+      "year": "SO"
+    },
+    "7": {
+      "name": "Nick Foxx",
+      "num": "7",
+      "position": "M",
+      "year": "JR"
+    },
+    "8": {
+      "name": "Ian Foster",
+      "num": "8",
+      "position": "FO/M",
+      "year": "JR"
+    },
+    "9": {
+      "name": "Collin Mailman",
+      "num": "9",
+      "position": "M",
+      "year": "JR"
+    },
+    "10": {
+      "name": "Luke Hurley",
+      "num": "10",
+      "position": "M",
+      "year": "JR"
+    },
+    "11": {
+      "name": "John Roulston",
+      "num": "11",
+      "position": "G",
+      "year": "JR"
+    },
+    "12": {
+      "name": "Cam Harris",
+      "num": "12",
+      "position": "M",
+      "year": "SR"
+    },
+    "13": {
+      "name": "Stephen Becker",
+      "num": "13",
+      "position": "A",
+      "year": "R-FR"
+    },
+    "15": {
+      "name": "Charles Dumas",
+      "num": "15",
+      "position": "A",
+      "year": "SO"
+    },
+    "16": {
+      "name": "Mark Hartmann",
+      "num": "16",
+      "position": "FO",
+      "year": "FR"
+    },
+    "17": {
+      "name": "George Grippo",
+      "num": "17",
+      "position": "A/M",
+      "year": "FR"
+    },
+    "18": {
+      "name": "Will Stabbert",
+      "num": "18",
+      "position": "D",
+      "year": "JR"
+    },
+    "19": {
+      "name": "Sean Valentino",
+      "num": "19",
+      "position": "M",
+      "year": "JR"
+    },
+    "20": {
+      "name": "Jimmeh Koita",
+      "num": "20",
+      "position": "FO/M",
+      "year": "JR"
+    },
+    "21": {
+      "name": "Reid Bowering",
+      "num": "21",
+      "position": "A",
+      "year": "JR"
+    },
+    "22": {
+      "name": "Charlie Maly",
+      "num": "22",
+      "position": "D",
+      "year": "FR"
+    },
+    "23": {
+      "name": "Pat Kiernan",
+      "num": "23",
+      "position": "D",
+      "year": "SO"
+    },
+    "24": {
+      "name": "Jack Farrell",
+      "num": "24",
+      "position": "D",
+      "year": "SO"
+    },
+    "25": {
+      "name": "Brennan Greenwald",
+      "num": "25",
+      "position": "D",
+      "year": "SO"
+    },
+    "26": {
+      "name": "Wade Shervin",
+      "num": "26",
+      "position": "M",
+      "year": "JR"
+    },
+    "27": {
+      "name": "Nolan Fox",
+      "num": "27",
+      "position": "M",
+      "year": "JR"
+    },
+    "28": {
+      "name": "Ryan Genord",
+      "num": "28",
+      "position": "M/A",
+      "year": "SO"
+    },
+    "29": {
+      "name": "Patrick Udovich",
+      "num": "29",
+      "position": "D",
+      "year": "R-FR"
+    },
+    "30": {
+      "name": "Paul Macrina",
+      "num": "30",
+      "position": "G",
+      "year": "R-FR"
+    },
+    "31": {
+      "name": "Matt Soran",
+      "num": "31",
+      "position": "A",
+      "year": "SR"
+    },
+    "32": {
+      "name": "Ross Blumenthal",
+      "num": "32",
+      "position": "G",
+      "year": "FR"
+    },
+    "33": {
+      "name": "Kyle DeCrispino",
+      "num": "33",
+      "position": "A",
+      "year": "FR"
+    },
+    "34": {
+      "name": "Anthony Rosato",
+      "num": "34",
+      "position": "FO",
+      "year": "R-FR"
+    },
+    "38": {
+      "name": "Christopher Friedman",
+      "num": "38",
+      "position": "M",
+      "year": "SR"
+    },
+    "39": {
+      "name": "Tanner Mearns",
+      "num": "39",
+      "position": "D",
+      "year": "FR"
+    },
+    "40": {
+      "name": "Jason DePhillips",
+      "num": "40",
+      "position": "D",
+      "year": "JR"
+    },
+    "41": {
+      "name": "Matt Klinges",
+      "num": "41",
+      "position": "D",
+      "year": "SR"
+    },
+    "42": {
+      "name": "Chris McLallen",
+      "num": "42",
+      "position": "A",
+      "year": "JR"
+    },
+    "43": {
+      "name": "Sean Quinn",
+      "num": "43",
+      "position": "D",
+      "year": "SO"
+    },
+    "44": {
+      "name": "John Van Sickle",
+      "num": "44",
+      "position": "G",
+      "year": "SO"
+    },
+    "45": {
+      "name": "Lucas Snider",
+      "num": "45",
+      "position": "D",
+      "year": "R-FR"
+    },
+    "47": {
+      "name": "Jonah Roberts",
+      "num": "47",
+      "position": "D",
+      "year": "R-FR"
+    },
+    "48": {
+      "name": "Dan Burnam",
+      "num": "48",
+      "position": "A/M",
+      "year": "FR"
+    },
+    "49": {
+      "name": "Luke Stansfield",
+      "num": "49",
+      "position": "A",
+      "year": "SO"
+    },
+    "50": {
+      "name": "Aidan Coll",
+      "num": "50",
+      "position": "A",
+      "year": "SO"
+    }
+  }
+}
