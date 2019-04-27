@@ -206,7 +206,7 @@ sub { vertical-align: middle}
 #HOME_LOWER_THIRD #BOTTOM_TEXT, #AWAY_LOWER_THIRD #BOTTOM_TEXT { float: right; }
 
 
-#HOME_LOWER_THIRD .show_secondary, #HOME_LOWER_THIRD .show_secondary { height: 120px; }
+#HOME_LOWER_THIRD .show_secondary, #AWAY_LOWER_THIRD .show_secondary { height: 120px; }
 
 #HOME_LOWER_THIRD .show_secondary .SECONDARY_TEXT, #AWAY_LOWER_THIRD .show_secondary .SECONDARY_TEXT {
     display: block;
