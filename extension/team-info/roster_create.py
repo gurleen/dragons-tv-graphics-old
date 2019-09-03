@@ -2,23 +2,29 @@
 
 import json
 
-FILENAME = 'mens_lacrosse.json'
+FILENAME = 'towson/mens_lacrosse.json'
 
 print('DragonsTV Roster Creation Tool')
 print('Appending to file', FILENAME)
 
+players = []
+
 f = open(FILENAME, 'a')
-while True:
-    try:
+
+def main():
+    while True:
         name = input('Name: ')
         num = input('Number: ')
         pos = input('Position: ')
         year = input('Year: ')
-        team = {num: {'name':name, 'num': num, 'position':pos, 'year':year }}
-        f.write(json.dumps(team, indent=4))
-        f.write(',\n')
+        player = {num: {'name':name, 'num': num, 'position':pos, 'year':year }}
         print('Wrote', name, 'to file')
         print()
-    except KeyboardInterrupt:
-        f.close()
+        players.append(player)
+
+if __name__ == '__main__':
+    try:    
+        main()
+    except EOFError:
+        f.write(json.dumps(team, indent=4))
         quit()

@@ -22,26 +22,36 @@
 			clockState = nodecg.Replicant('clockState');
 			currentImage = nodecg.Replicant('currentImage');
 			imageAnimation = nodecg.Replicant('imageAnimation');
+			liveDataRep = nodecg.Replicant('liveData');
 
 			const timerText = $('#TIMER');
+			/* 
 			let timer = new easytimer.Timer();
-			timer.start({countdown: true, startValues: {minutes: 30, seconds: 0}});
+			timer.start();
 			timer.pause();
 			timerText.text(timer.getTimeValues().toString().substring(3));
 			timer.addEventListener('secondsUpdated', function(e) {
 	    		timerText.text(timer.getTimeValues().toString().substring(3));
 	    		timeStr.value = timerText.text();
 			});
+			*/ 
+
+			liveDataRep.on('change', (newValue, oldValue) => {
+				$('#TIMER').text(newValue.clockStr);
+				$('#HOME_SCORE').text(newValue.homeScore);
+				$('#AWAY_SCORE').text(newValue.awayScore);
+				$('#PERIOD').text(newValue.period);
+			})
 
 			time.on('change', (newValue, oldValue) => {
 				timer.stop();
-				timer.start({countdown: true, startValues: {minutes: newValue["minutes"], seconds: newValue["seconds"]}});
+				timer.start({countdown: false, startValues: {minutes: newValue["minutes"], seconds: newValue["seconds"]}});
 				timer.pause();
 				timerText.text(timer.getTimeValues().toString().substring(3));
 				timeStr.value = timerText.text();
 			});
 
-
+			/* 
 			clockState.on('change', (newValue, oldValue) => {
 				if(timer.isRunning()) {
 					timer.pause();
@@ -49,6 +59,7 @@
 					timer.start();
 				}
 			});
+			*/ 
 
 			score.on('change', (newValue, oldValue) => {
 				$(".HOME_SCORE").text(newValue["homeScore"]);
@@ -91,7 +102,6 @@
 				}
 				$("#IMAGE").attr("class", newClasses + newValue);
 			});
-
 		});
 
 
@@ -115,7 +125,7 @@
 </head>
 <body>
 	<div id="view" class="scorebug testing-off">
-		<div id="SCOREBUG" class="view slideUp">
+		<div id="SCOREBUG" class="view slideLeft">
 			<div class="team" id="HOME" style="background-color: #07294D">
 				<div id="HOME_IMG" class="img" style="background-image: url('https://drexel.edu/~/media/Images/identity/athletics/athletics_primary.ashx?la=en')" ></div>
 				<div id="HOME_TEXT_COLOR" style="color: #FFFFFF" class="text">
@@ -126,25 +136,29 @@
 
 			<div id="middle">
 				<div id="INFO" class="scorebug_visible visible">
-					<div id="TIMER"><span class="TIME_MINUTES">10</span>:<span class="TIME_SECONDS">00</span></div>
+					<div id="TIMER"><span class="TIME_MINUTES">0</span>:<span class="TIME_SECONDS">00</span></div>
 					<hr class="faded" />
 					<div id="PERIOD" class="PERIOD">1st</div>
 				</div>
 			</div>
 
-			<div class="team scorebug_visible" id="AWAY" style="background-color: #cc9900">
-				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')"> </div>
+			<div class="team scorebug_visible" id="AWAY" style="background-color: #CC0033">
+				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1200px-Rutgers_Scarlet_Knights_logo.svg.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFF" class="text scorebug_visible">
 					<div id="AWAY_SCORE" class="score AWAY_SCORE">0</div>
-					<div id="AWAY_NAME" color="#450084" class="name"><sub>13</sub> TOWSON</div>
+					<div id="AWAY_NAME" color="#450084" class="name">RUTGERS</div>
 				</div>
+			</div>
+
+			<div class='card' id='YELLOW'>
+
 			</div>
 		</div>
 
 
 		<div id="MATCHUP" class="view fade">
 			<div class="shadow padded upper matchup_visible">
-				<span id="DATE">April 27, 2019</span> <span class="separator">&mdash;</span> Philadelphia, PA
+				<span id="DATE">August 22, 2019</span> <span class="separator">&mdash;</span> Philadelphia, PA
 			</div>
 			<div class="team" id="HOME" style="background-color: #07294D">
 				<div id="HOME_IMG" class="img" style="background-image: url('https://drexel.edu/~/media/Images/identity/athletics/athletics_primary.ashx?la=en')" ></div>
@@ -153,16 +167,16 @@
 					<div class="title">DRAGONS</div>
 				</div>
 			</div>
-			<div class="team" id="AWAY" style="background-color: #cc9900">
-				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')"> </div>
+			<div class="team" id="AWAY" style="background-color: #CC0033">
+				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1200px-Rutgers_Scarlet_Knights_logo.svg.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFFFFF" class="text">
-					<div id="AWAY_NAME" color="#450084" class="name"><sub>13</sub> TOWSON</div>
-					<div id="AWAY_TITLE" class="title" color="#FFC600">TIGERS</div>
+					<div id="AWAY_NAME" color="#450084" class="name">RUTGERS</div>
+					<div id="AWAY_TITLE" class="title" color="#FFC600">SCARLET KNIGHTS</div>
 				</div>
 			</div>
 			<div class="grey padded">
 				<div class="matchup_visible padded">
-					<div id="GAME_NAME" class="upper bigger">Drexel Men's Lacrosse</div>
+					<div id="GAME_NAME" class="upper bigger">Drexel Men's Soccer</div>
 					<hr>
 					<div id="sponsor">Presented by
 						<img id="SPONSOR_IMG" width="290" src="https://www.cancergoldstandard.org/sites/default/files/organisation/IBC_RGB_Blue_300.png" />
@@ -181,12 +195,12 @@
 				</div>
 			</div>
 
-			<div class="team" id="AWAY" style="background-color: #cc9900">
-				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')"> </div>
+			<div class="team" id="AWAY" style="background-color: #CC0033">
+				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1200px-Rutgers_Scarlet_Knights_logo.svg.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFFFFF" class="text">
 					<div id="AWAY_SCORE" class="score AWAY_SCORE">0</div>
-					<div id="AWAY_NAME" class="name"><sub>13</sub> TOWSON</div>
-					<div id="AWAY_TITLE" class="title">TIGERS</div>
+					<div id="AWAY_NAME" class="name">RUTGERS</div>
+					<div id="AWAY_TITLE" class="title">SCARLET KNIGHTS</div>
 				</div>
 			</div>
 
@@ -214,7 +228,7 @@
 
 		<div id="AWAY_LOWER_THIRD" style="border-color: #eee" class="view slideUp">
 			<div class="workspace " >
-				<div class="logo" id="LOGO_BG" style="background-color: #cc9900">
+				<div class="logo" id="LOGO_BG" style="background-color: #CC0033">
 					<div id="LOGO" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')" ></div>
 				</div>
 				<div class="padded">
