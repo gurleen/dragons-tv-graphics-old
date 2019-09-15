@@ -2,11 +2,11 @@
   "name": "dutv-graphics-package",
   "version": "0.0.0",
   "description": "",
-  "homepage": "",
+  "homepage": "https://gurleen.dev/",
   "author": {
     "name": "Gurleen Singh",
     "email": "gs585@drexel.edu",
-    "url": "gsingh.me"
+    "url": "https://gurleen.dev/"
   },
   "files": [
     "dashboard",
@@ -22,10 +22,24 @@
     "compatibleRange": "^1.1.1",
     "dashboardPanels": [
       {
-        "name": "dutv-graphics",
-        "title": "DUTV Graphics",
+        "name": "master-control",
+        "title": "Master Control",
         "width": 4,
-        "file": "dutv-graphics.html",
+        "file": "master-control.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "scorebug",
+        "title": "Scorebug",
+        "width": 4,
+        "file": "scorebug.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "other-graphics",
+        "title": "Other Graphics",
+        "width": 3,
+        "file": "other.html",
         "headerColor": "#525F78"
       }
     ],

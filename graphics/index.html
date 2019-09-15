@@ -9,32 +9,19 @@
 	<script type="text/javascript">
 
 
-		var score, time, timeStr, currentGraphic, currentPeriod, lowerThird, clockState, currentImage, imageAnimation;
+		var currentGraphic, currentPeriod, lowerThird, currentImage, imageAnimation, liveDataRep;
 
 
 		$(document).ready(function() {
-			score = nodecg.Replicant("scoreData");
-			time = nodecg.Replicant("timeData");
-			timeStr = nodecg.Replicant("timeStr");
 			currentGraphic = nodecg.Replicant("currentGraphic");
 			currentPeriod = nodecg.Replicant("currentPeriod");
 			lowerThird = nodecg.Replicant("lowerThird");
-			clockState = nodecg.Replicant('clockState');
 			currentImage = nodecg.Replicant('currentImage');
 			imageAnimation = nodecg.Replicant('imageAnimation');
 			liveDataRep = nodecg.Replicant('liveData');
 
-			const timerText = $('#TIMER');
-			/* 
-			let timer = new easytimer.Timer();
-			timer.start();
-			timer.pause();
-			timerText.text(timer.getTimeValues().toString().substring(3));
-			timer.addEventListener('secondsUpdated', function(e) {
-	    		timerText.text(timer.getTimeValues().toString().substring(3));
-	    		timeStr.value = timerText.text();
-			});
-			*/ 
+			const toggleMatchup = nodecg.Replicant('toggleMatchup');
+			const toggleFinal = nodecg.Replicant('toggleFinal');
 
 			liveDataRep.on('change', (newValue, oldValue) => {
 				$('#TIMER').text(newValue.clockStr);
@@ -43,34 +30,15 @@
 				$('#PERIOD').text(newValue.period);
 			})
 
-			time.on('change', (newValue, oldValue) => {
-				timer.stop();
-				timer.start({countdown: false, startValues: {minutes: newValue["minutes"], seconds: newValue["seconds"]}});
-				timer.pause();
-				timerText.text(timer.getTimeValues().toString().substring(3));
-				timeStr.value = timerText.text();
-			});
+			toggleMatchup.on('change', (newValue, oldValue) => {
+				if(newValue == true) { show('MATCHUP'); }
+				else { show('NONE'); }
+			})
 
-			/* 
-			clockState.on('change', (newValue, oldValue) => {
-				if(timer.isRunning()) {
-					timer.pause();
-				} else {
-					timer.start();
-				}
-			});
-			*/ 
-
-			score.on('change', (newValue, oldValue) => {
-				$(".HOME_SCORE").text(newValue["homeScore"]);
-				$(".AWAY_SCORE").text(newValue["awayScore"]);
-
-			});
-
-			time.on('change', (newValue, oldValue) => {
-				$(".TIME_MINUTES").text(newValue["minutes"]);
-				$(".TIME_SECONDS").text(newValue["seconds"]);
-			});
+			toggleFinal.on('change', (newValue, oldValue) => {
+				if(newValue == true) { show('FINAL'); }
+				else { show('NONE'); }
+			})
 
 			currentGraphic.on('change', (newValue, oldValue) => {
 				show(newValue);
@@ -105,6 +73,19 @@
 		});
 
 
+		nodecg.listenFor('toggleGraphic', message => {
+			toggleVisible(message);
+		});
+
+		function toggleVisible(id) {
+			id = `#${id}`;
+			if($(id).hasClass('active')) {
+				$(id).removeClass('active').addClass('inactive');
+			}
+			else {
+				$(id).removeClass('inactive').addClass('active');
+			}
+		}
 
 		function show(id) {
 			let elements = document.getElementsByClassName("active");
@@ -142,11 +123,11 @@
 				</div>
 			</div>
 
-			<div class="team scorebug_visible" id="AWAY" style="background-color: #CC0033">
-				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1200px-Rutgers_Scarlet_Knights_logo.svg.png')"> </div>
+			<div class="team scorebug_visible" id="AWAY" style="background-color: #00539F">
+				<div id="AWAY_IMG" class="img" style="background-image: url('http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fncaa%2F500%2F48.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFF" class="text scorebug_visible">
 					<div id="AWAY_SCORE" class="score AWAY_SCORE">0</div>
-					<div id="AWAY_NAME" color="#450084" class="name">RUTGERS</div>
+					<div id="AWAY_NAME" color="#450084" class="name">DELAWARE</div>
 				</div>
 			</div>
 
@@ -167,16 +148,16 @@
 					<div class="title">DRAGONS</div>
 				</div>
 			</div>
-			<div class="team" id="AWAY" style="background-color: #CC0033">
-				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1200px-Rutgers_Scarlet_Knights_logo.svg.png')"> </div>
+			<div class="team" id="AWAY" style="background-color: #00539F">
+				<div id="AWAY_IMG" class="img" style="background-image: url('http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fncaa%2F500%2F48.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFFFFF" class="text">
-					<div id="AWAY_NAME" color="#450084" class="name">RUTGERS</div>
-					<div id="AWAY_TITLE" class="title" color="#FFC600">SCARLET KNIGHTS</div>
+					<div id="AWAY_NAME" color="#450084" class="name">DELAWARE</div>
+					<div id="AWAY_TITLE" class="title" color="#FFC600">BLUE HENS</div>
 				</div>
 			</div>
 			<div class="grey padded">
 				<div class="matchup_visible padded">
-					<div id="GAME_NAME" class="upper bigger">Drexel Men's Soccer</div>
+					<div id="GAME_NAME" class="upper bigger">Drexel Men's Basketball</div>
 					<hr>
 					<div id="sponsor">Presented by
 						<img id="SPONSOR_IMG" width="290" src="https://www.cancergoldstandard.org/sites/default/files/organisation/IBC_RGB_Blue_300.png" />
@@ -195,12 +176,12 @@
 				</div>
 			</div>
 
-			<div class="team" id="AWAY" style="background-color: #CC0033">
-				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1200px-Rutgers_Scarlet_Knights_logo.svg.png')"> </div>
+			<div class="team" id="AWAY" style="background-color: #00539F">
+				<div id="AWAY_IMG" class="img" style="background-image: url('http://a2.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fncaa%2F500%2F48.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFFFFF" class="text">
 					<div id="AWAY_SCORE" class="score AWAY_SCORE">0</div>
-					<div id="AWAY_NAME" class="name">RUTGERS</div>
-					<div id="AWAY_TITLE" class="title">SCARLET KNIGHTS</div>
+					<div id="AWAY_NAME" class="name">DELAWARE</div>
+					<div id="AWAY_TITLE" class="title">BLUE HENS</div>
 				</div>
 			</div>
 
@@ -228,7 +209,7 @@
 
 		<div id="AWAY_LOWER_THIRD" style="border-color: #eee" class="view slideUp">
 			<div class="workspace " >
-				<div class="logo" id="LOGO_BG" style="background-color: #CC0033">
+				<div class="logo" id="LOGO_BG" style="background-color: #00539F">
 					<div id="LOGO" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Towson_Tigers_logo.svg/1200px-Towson_Tigers_logo.svg.png')" ></div>
 				</div>
 				<div class="padded">

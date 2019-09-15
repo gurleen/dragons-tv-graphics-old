@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./tools.js"></script>
+
+    <style>
+        body { background-color: #242C3C; color: white;}
+
+        .ctr { text-align: center; }
+    </style>
+
+</head>
+<body>
+    
+<div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1 id="clock" class="ctr">00:00</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h2 id="period" class="ctr">1st</h2>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Period" aria-label="Period" id="periodInput">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button" id="updatePeriod">Update</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <h2>Home</h2>
+            </div>
+            <div class="col-3">
+                <h3 style="text-align: right" id="homeScore">0</h3>
+            </div>
+            <div class="col-3">
+                <h3 id="awayScore">0</h3>
+            </div>
+            <div class="col-3">
+                <h2 style="text-align: right;">Away</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-success" id="toggleBug">FLY SCOREBUG</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <script>
+        const liveData = nodecg.Replicant('liveData');
+        liveData.on('change', (newVal, oldVal) => {
+            $('#homeScore').text(newVal.homeScore);
+            $('#awayScore').text(newVal.awayScore);
+            $('#clock').text(newVal.clockStr);
+        });
+
+        active = { text: 'PULL SCOREBUG', class: 'btn-danger' }
+        inactive = { text: 'FLY SCOREBUG', class: 'btn=success' }
+        var scorebug = new ToggleButton('toggleBug', active, inactive);
+        $('#toggleBug').click(() => {
+            scorebug.toggle();
+            nodecg.sendMessage('toggleGraphic', 'SCOREBUG');
+        });
+
+        const currentPeriod = nodecg.Replicant('currentPeriod');
+        $('#updatePeriod').click(() => {
+            var newPeriod = $('#periodInput').val();
+            currentPeriod.value = newPeriod;
+            $('#period').text(newPeriod);
+        });
+    </script>
+
+</body>
+</html>

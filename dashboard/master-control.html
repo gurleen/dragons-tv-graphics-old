@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="home-container">
-		<h2>Home Team</h2>
-		Score: <b><span id="home-score">0</span></b><br>
-		<button id="home-plus-1">+1</button><button id="home-minus-1">-1</button>
-	</div>
-	<div class="away-container">
-		<h2>Away Team</h2>
-		Score: <b><span id="away-score">0</span></b><br>
-		<button id="away-plus-1">+1</button><button id="away-minus-1">-1</button>
-	</div>
-
+	<!--
 	<div class="lower-third-container">
 		<h2>Lower Third Control</h2>
 		Home Team Presets: <select id="home-lth-presets" onchange="setHomePreset()"></select>
@@ -23,19 +17,32 @@
 		Secondary Text: <input type="text" id="lth-secondary-text"><br>
 		<button id="lth-update">Update Lower Third</button>
 	</div>
+	-->
 
-	<div class="master-container">
-		<h2>Master Control</h2>
-		<h3>Show Graphic:</h3>
-		<div class="btn-group">
-			<button onclick="lth('SCOREBUG')">Scorebug</button>
-			<button onclick="lth('FINAL')">Half/Final/Break</button>
-			<button onclick="lth('MATCHUP')">Matchup</button>
-			<button onclick="lth('HOME_LOWER_THIRD')">Home Lower Third</button>
-			<button onclick="lth('AWAY_LOWER_THIRD')">Away Lower Third</button>
-			<button onclick="lth('IMAGE')">Custom Image</button>
-			<button onclick="lth('NONE')">None</button>
+	<style>
+		body {
+			background-color: #242C3C;
+		}
+	</style>
+
+	<div class="container">
+		<div class="btn-group btn-group-justified">
+			<button class="btn btn-primary btn-lg" onclick="lth('SCOREBUG')">Scorebug</button>
+			<button class="btn btn-primary btn-lg" onclick="lth('FINAL')">Half/Final/Break</button>
+			<button class="btn btn-primary btn-lg" onclick="lth('MATCHUP')">Matchup</button>
 		</div>
+		<div class="btn-group btn-group-justified">
+			<button class="btn btn-primary btn-lg" onclick="lth('HOME_LOWER_THIRD')">Home Lower Third</button>
+			<button class="btn btn-primary btn-lg" onclick="lth('AWAY_LOWER_THIRD')">Away Lower Third</button>
+			<button class="btn btn-primary btn-lg" onclick="lth('IMAGE')">Custom Image</button>
+		</div>
+		<div class="btn-group btn-group-justified">
+			<button class="btn btn-primary btn-lg" onclick="lth('NONE')">None</button>
+		</div>
+	</div>
+
+
+		<!--
 		<br />
 		Custom Image Animation:
 		<select id="image-animation" onchange="">
@@ -53,22 +60,14 @@
 			<option value="last_5_both.png">Last 5 BOTH</option>
 			<option value="last_5_drexel.png">Last 5 Drexel</option>
 			<option value="last_5_away.png">Last 5 Away</option>
-			<!--option value="caa_standings.png">CAA Standings</option-->
-			<!--option value="out_of_town.png">Out of Town Scoreboard</option-->
+			option value="caa_standings.png">CAA Standings</option
+			option value="out_of_town.png">Out of Town Scoreboard</option
+		
 		</select> <br />
 		Current image: <input type="text" id="image" />
 		<button id="updateImage">Update Image</button>
 		<br />
-
-		<h3>Time Control: </h3>
-		<b><span id="time-str">10:00</span></b><br>
-		<button id="toggle-timer">Start/Stop Timer</button><br>
-		Minutes: <input type="text" id="min-update"><br>
-		Seconds: <input type="text" id="sec-update"><br>
-		<button id="time-update">Update Time</button><br>
-		Current Period: <input type="text" id="period"><br>
-		<button id="updatePeriod">Update Period</button>
-	</div>
+	-->
 
 	<script type="text/javascript">
 		

@@ -58,8 +58,8 @@ body {
 }
 
 
-.slideUp.active { animation-name: slideUp; animation-duration: 1s; animation-timing-function: ease-in-out; opacity: 1; }
-.slideUp.inactive { animation-name: slideUpOut; animation-duration: 1s; animation-timing-function: ease-in-out; opacity: 0; }
+.slideUp.active { animation-name: slideUp; animation-duration: 1s; animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1); opacity: 1; }
+.slideUp.inactive { animation-name: slideUpOut; animation-duration: 1s; animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1); opacity: 0; }
 
 @keyframes slideUp {
 	0% { transform: translateY(100%); opacity: 0; }
@@ -72,8 +72,8 @@ body {
 }
 
 
-.slideRight.active { animation-name: slideRight; animation-duration: 1s; animation-timing-function: ease-in-out; opacity: 1; }
-.slideRight.inactive { animation-name: slideRightOut; animation-duration: 1s; animation-timing-function: ease-in-out; opacity: 0; }
+.slideRight.active { animation-name: slideRight; animation-duration: 1s; animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1); opacity: 1; }
+.slideRight.inactive { animation-name: slideRightOut; animation-duration: 1s; animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1); opacity: 0; }
 
 @keyframes slideRight {
 	0% { transform: translateX(100%); opacity: 1; }
@@ -90,12 +90,12 @@ body {
 .slideLeft.inactive { animation-name: slideLeftOut; animation-duration: 1s; animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1); opacity: 0; }
 
 @keyframes slideLeft {
-	0% { transform: translateX(-110%); opacity: 1; }
+	0% { transform: translateX(-110%); opacity: 0; }
 	100% { transform: translateX(0%); opacity: 1; }
 }
 
 @keyframes slideLeftOut {
-	0% { transform: translateX(0%); opacity: 1; }
+	0% { transform: translateX(0%); opacity: 0; }
 	100% { transform: translateX(-110%); opacity: 1; }
 }
 
