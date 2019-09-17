@@ -22,13 +22,6 @@
     "compatibleRange": "^1.1.1",
     "dashboardPanels": [
       {
-        "name": "master-control",
-        "title": "Master Control",
-        "width": 4,
-        "file": "master-control.html",
-        "headerColor": "#525F78"
-      },
-      {
         "name": "scorebug",
         "title": "Scorebug",
         "width": 4,
@@ -40,6 +33,27 @@
         "title": "Other Graphics",
         "width": 3,
         "file": "other.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "home-lower-third",
+        "title": "Home Lower Third Control",
+        "width": 3,
+        "file": "homelowerthird.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "away-lower-third",
+        "title": "Away Lower Third Control",
+        "width": 3,
+        "file": "awaylowerthird.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "image-loader",
+        "title": "Image Loader",
+        "width": 3,
+        "file": "imageloader.html",
         "headerColor": "#525F78"
       }
     ],

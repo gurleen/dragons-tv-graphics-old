@@ -1,0 +1,263 @@
+[
+ {
+   "number": "1",
+   "name": "Cameron Sanders",
+   "pos": "GK",
+   "height": "6-3",
+   "class": "R-Jr.",
+   "FIELD6": "York Springs, Pa. / York Country Day",
+   "FIELD7": "<span data-custom-label=\"Club :\">PA Classics Academy"
+ },
+ {
+   "number": "2",
+   "name": "Bennett Detweiler",
+   "pos": "D",
+   "height": "6-0",
+   "class": "So.",
+   "FIELD6": "Woodsboro, Md. / Walkersville",
+   "FIELD7": "<span data-custom-label=\"Club :\">Baltimore Armour Academy"
+ },
+ {
+   "number": "3",
+   "name": "Anthony Amore",
+   "pos": "D",
+   "height": "5-7",
+   "class": "Jr.",
+   "FIELD6": "Plainsboro, N.J. / West Windsor Plainsboro South",
+   "FIELD7": "<span data-custom-label=\"Club :\">Match Fit Academy FC"
+ },
+ {
+   "number": "4",
+   "name": "David Rylander",
+   "pos": "M",
+   "height": "5-9",
+   "class": "So.",
+   "FIELD6": "Stockholm, Sweden / Midsommarkransen Gymnasium",
+   "FIELD7": "<span data-custom-label=\"Club :\">FOC Farsta"
+ },
+ {
+   "number": "5",
+   "name": "Michael McCarthy",
+   "pos": "D",
+   "height": "6-3",
+   "class": "So.",
+   "FIELD6": "Berwyn, Pa. / Conestoga",
+   "FIELD7": "<span data-custom-label=\"Club :\">FC Montco Die Mannschaft"
+ },
+ {
+   "number": "6",
+   "name": "Rafael Mariano",
+   "pos": "M/D",
+   "height": "6-0",
+   "class": "Jr.",
+   "FIELD6": "Sao Paulo, Brazil / E.E. Francisco DeRosa / Marshalltown C.C.",
+   "FIELD7": "<span data-custom-label=\"Club :\">"
+ },
+ {
+   "number": "7",
+   "name": "Chris Donovan",
+   "pos": "F",
+   "height": "6-1",
+   "class": "So.",
+   "FIELD6": "Paoli, Pa. / Conestoga",
+   "FIELD7": "<span data-custom-label=\"Club :\">FC Montco Die Mannschaft"
+ },
+ {
+   "number": "8",
+   "name": "Joey Martini",
+   "pos": "M",
+   "height": "5-8",
+   "class": "So.",
+   "FIELD6": "Chester Springs, Pa. / Downingtown East",
+   "FIELD7": "<span data-custom-label=\"Club :\">Penn Fusion SA"
+ },
+ {
+   "number": "10",
+   "name": "Francisco Rodrigues da  Palma",
+   "pos": "F/M",
+   "height": "6-0",
+   "class": "Sr.",
+   "FIELD6": "Lisbon, Portugal / Escola Secundaria Rainha Dona Amelia",
+   "FIELD7": "<span data-custom-label=\"Club :\">Atletico Clube de Portugal/Philadelphia Union Academy"
+ },
+ {
+   "number": "11",
+   "name": "Kwesi Allen",
+   "pos": "F",
+   "height": "5-11",
+   "class": "Sr.",
+   "FIELD6": "Port-of-Spain, Trinidad and Tobago / St. Anthony's College / Iowa Western",
+   "FIELD7": "<span data-custom-label=\"Club :\">"
+ },
+ {
+   "number": "12",
+   "name": "Yassine Elkahloun",
+   "pos": "F",
+   "height": "6-0",
+   "class": "Fr.",
+   "FIELD6": "North Potomac, Md. / Quince Orchard",
+   "FIELD7": "<span data-custom-label=\"Club :\">Baltimore Armour"
+ },
+ {
+   "number": "13",
+   "name": "Max Thesing",
+   "pos": "D",
+   "height": "5-8",
+   "class": "Fr.",
+   "FIELD6": "Westerville, Ohio / Wellington",
+   "FIELD7": "<span data-custom-label=\"Club :\">Columbus Crew SC Academy"
+ },
+ {
+   "number": "14",
+   "name": "Mark Cantor",
+   "pos": "M",
+   "height": "5-10",
+   "class": "Fr.",
+   "FIELD6": "Bel Air, Md. / C. Milton Wright",
+   "FIELD7": "<span data-custom-label=\"Club :\">Baltimore Armour"
+ },
+ {
+   "number": "15",
+   "name": "Valtteri Hiilloskorpi",
+   "pos": "D",
+   "height": "5-9",
+   "class": "Fr.",
+   "FIELD6": "Tampere, Finland / Sammon Keskuslukio",
+   "FIELD7": "<span data-custom-label=\"Club :\">Ilves"
+ },
+ {
+   "number": "16",
+   "name": "Kyle Tucker",
+   "pos": "M",
+   "height": "6-0",
+   "class": "So.",
+   "FIELD6": "Phoenixville, Pa. / Phoenixville Area",
+   "FIELD7": "<span data-custom-label=\"Club :\">Penn Fusion SA"
+ },
+ {
+   "number": "17",
+   "name": "Strick Newsom",
+   "pos": "D",
+   "height": "5-6",
+   "class": "Sr.",
+   "FIELD6": "Owings, Md. / DeMatha Catholic",
+   "FIELD7": "<span data-custom-label=\"Club :\">Maryland United"
+ },
+ {
+   "number": "18",
+   "name": "Laolu Daranijo",
+   "pos": "F",
+   "height": "6-1",
+   "class": "Jr.",
+   "FIELD6": "Lagos, Nigeria / Peddie School (N.J.)",
+   "FIELD7": "<span data-custom-label=\"Club :\">Match Fit Academy FC"
+ },
+ {
+   "number": "19",
+   "name": "Elliott Swigert",
+   "pos": "M",
+   "height": "5-11",
+   "class": "Fr.",
+   "FIELD6": "Oakland, Calif. / Oakland Tech",
+   "FIELD7": "<span data-custom-label=\"Club :\">Bay Oaks"
+ },
+ {
+   "number": "20",
+   "name": "Griffin Mallas",
+   "pos": "D",
+   "height": "6-3",
+   "class": "Gr.",
+   "FIELD6": "Las Vegas, Nev. / Palo Verde",
+   "FIELD7": "<span data-custom-label=\"Club :\">Las Vegas Soccer Academy"
+ },
+ {
+   "number": "21",
+   "name": "Michael Campbell",
+   "pos": "F",
+   "height": "6-1",
+   "class": "So.",
+   "FIELD6": "Somerset, N.J. / The Hun School",
+   "FIELD7": "<span data-custom-label=\"Club :\">Match Fit Academy FC"
+ },
+ {
+   "number": "22",
+   "name": "Stephen Kopsachilis",
+   "pos": "GK",
+   "height": "6-0",
+   "class": "So.",
+   "FIELD6": "East Northport, N.Y. / Commack",
+   "FIELD7": "<span data-custom-label=\"Club :\">BW Gottschee Academy"
+ },
+ {
+   "number": "23",
+   "name": "Chris Carroll",
+   "pos": "M",
+   "height": "5-6",
+   "class": "Jr.",
+   "FIELD6": "Perry Hall, Md. / Calvert Hall",
+   "FIELD7": "<span data-custom-label=\"Club :\">Pipeline SC"
+ },
+ {
+   "number": "24",
+   "name": "Patrick Murphy",
+   "pos": "M",
+   "height": "5-9",
+   "class": "Jr.",
+   "FIELD6": "Lansdale, Pa. / North Penn",
+   "FIELD7": "<span data-custom-label=\"Club :\">Philadelphia Union Academy"
+ },
+ {
+   "number": "25",
+   "name": "Colin Davis",
+   "pos": "D",
+   "height": "6-1",
+   "class": "Fr.",
+   "FIELD6": "Doylestown, Pa. / Hatboro-Horsham",
+   "FIELD7": "<span data-custom-label=\"Club :\">Philadelphia Union Academy"
+ },
+ {
+   "number": "26",
+   "name": "Philip Burckhardt",
+   "pos": "F",
+   "height": "6-0",
+   "class": "Fr.",
+   "FIELD6": "Philadelphia, Pa. / Springside-Chestnut Hill Academy",
+   "FIELD7": "<span data-custom-label=\"Club :\">Lower Merion Soccer Club"
+ },
+ {
+   "number": "28",
+   "name": "Harrison Coron",
+   "pos": "M",
+   "height": "5-5",
+   "class": "So.",
+   "FIELD6": "Malvern, Pa. / Bishop Shanahan",
+   "FIELD7": "<span data-custom-label=\"Club :\">FC Montco Die Mannschaft"
+ },
+ {
+   "number": "29",
+   "name": "Adam Nork",
+   "pos": "M",
+   "height": "5-10",
+   "class": "Jr.",
+   "FIELD6": "Philadelphia, Pa. / Father Judge",
+   "FIELD7": "<span data-custom-label=\"Club :\">Yardley Makefield SC"
+ },
+ {
+   "number": "30",
+   "name": "Caleb Wertz",
+   "pos": "D",
+   "height": "5-11",
+   "class": "So.",
+   "FIELD6": "Wernersville, Pa. / Wilson",
+   "FIELD7": "<span data-custom-label=\"Club :\">FC Montco Die Mannschaft"
+ },
+ {
+   "number": "34",
+   "name": "Michael McKeown",
+   "pos": "F",
+   "height": "6-0",
+   "class": "Fr.",
+   "FIELD6": "Gloucester Township, N.J. / Highland Regional",
+   "FIELD7": "<span data-custom-label=\"Club :\">Philadelphia Union Academy"
+ }
+]

@@ -90,12 +90,12 @@ body {
 .slideLeft.inactive { animation-name: slideLeftOut; animation-duration: 1s; animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1); opacity: 0; }
 
 @keyframes slideLeft {
-	0% { transform: translateX(-110%); opacity: 0; }
+	0% { transform: translateX(-110%); opacity: 1; }
 	100% { transform: translateX(0%); opacity: 1; }
 }
 
 @keyframes slideLeftOut {
-	0% { transform: translateX(0%); opacity: 0; }
+	0% { transform: translateX(0%); opacity: 1; }
 	100% { transform: translateX(-110%); opacity: 1; }
 }
 
@@ -158,8 +158,8 @@ sub { vertical-align: middle}
 /* SCOREBUG */
 
 #SCOREBUG .scorebug_visible { display: block; text-align: center; }
-#SCOREBUG { width: 50%; position: absolute; bottom: 900px; left: 2%; right: 47%; overflow: hidden; background: #231f20; }
-#SCOREBUG .team { width: 42%; display: inline-block; vertical-align: middle; }
+#SCOREBUG { height: 104px; width: 40%; position: absolute; bottom: 900px; left: 2%; right: 47%; overflow: hidden; background: #231f20; }
+#SCOREBUG .team { width: 42%; display: inline-block; height: 110px; vertical-align: middle; }
 #SCOREBUG .team .img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-repeat: no-repeat; background-size: 50% auto; z-index: 0; opacity: 0.3;}
 #SCOREBUG #HOME .img { background-position: -5% center; }
 #SCOREBUG #AWAY .img { background-position: 105% center; }
@@ -172,10 +172,9 @@ sub { vertical-align: middle}
 #SCOREBUG #middle { width: 16%; display: inline-block; border: 1px solid #333; border-width: 0 1px; }
 #SCOREBUG #middle div { padding: 7px; }
 #SCOREBUG #middle { vertical-align: middle; }
-#SCOREBUG #TIMER { font-size: 32px;  font-family: "liquidcrystal", san-serif; letter-spacing: 2px; }
-#SCOREBUG #PERIOD { font-size: 20px; }
-
-
+#SCOREBUG #TIMER { font-size: 32px;  font-family: "liquidcrystal", san-serif; letter-spacing: 2px; position: relative; top: 0px; }
+#SCOREBUG #PERIOD { position: relative; font-size: 20px; bottom: 8px; }
+#bug_sponsor { position: relative; max-height: 100%; max-width: 100%; bottom: 6px; }
 
 
 #FINAL { width: 50%; position: absolute; bottom: 100px; left: 25%; right: 25%; overflow: hidden; background: #231f20; }
@@ -195,7 +194,7 @@ sub { vertical-align: middle}
 
 #FINAL .grey { padding: 20px; text-align: left; text-indent: 10px; font-size: 40px; letter-spacing: 1px; position: relative; }
 #FINAL #sponsor { float: right; top: 24px; right: 24px; bottom: 24px; position: absolute; }
-#FINAL #sponsor img { height: 100%; width: auto; }
+#FINAL #sponsor img { height: 100%; width: auto; float: right;}
 
 
 

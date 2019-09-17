@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./tools.js"></script>
+
+    <style>
+        body { background-color: #242C3C; color: white;}
+
+        .ctr { text-align: center; }
+    </style>
+
+</head>
+
+<body>
+
+<br />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <p>Current image: <span id="current">none</span></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <select id="imageList" onchange="changeImg(this.selectedIndex)">
+
+            </select>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col ctr">
+            <button id="flyImage" class="btn btn-success">
+                FLY IMAGE
+            </button>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<script>
+    const select = document.getElementById('imageList');
+    var imageList = []
+    nodecg.readReplicant('imageList', images => {
+        imageList = images;
+        images.forEach(image => {
+            select.add(new Option(image, image));
+        });
+    });
+
+    const currentImage = nodecg.Replicant('currentImage');
+    function changeImg(index) {
+        $('#current').text(imageList[index]);
+        currentImage.value = 'img/' + imageList[index];
+    };
+
+    active = {text: 'PULL IMAGE', class: 'btn-danger'}
+    inactive = {text: 'FLY IMAGE', class: 'btn-success'};
+    const imageButton = new ToggleButton('flyImage', active, inactive);
+    $('#flyImage').click(() => {
+        nodecg.sendMessage('toggleGraphic', 'IMAGE');
+        imageButton.toggle();
+    });
+</script>
+
+</body>
+
+</html>
