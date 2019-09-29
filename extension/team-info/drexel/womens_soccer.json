@@ -1,0 +1,317 @@
+[
+ {
+   "number": "#",
+   "name": "Name",
+   "pos": "Pos.",
+   "FIELD4": "Yr.",
+   "FIELD5": "Ht.",
+   "FIELD6": "Hometown",
+   "FIELD7": "High School"
+ },
+ {
+   "number": "00",
+   "name": "Grace Gordon",
+   "pos": "G",
+   "FIELD4": "Fr.",
+   "FIELD5": "5-10",
+   "FIELD6": "Wayne, Pa.",
+   "FIELD7": "The Shipley School"
+ },
+ {
+   "number": "0",
+   "name": "Miyuki Schoyen",
+   "pos": "G",
+   "FIELD4": "So.",
+   "FIELD5": "5-9",
+   "FIELD6": "Salisbury, Md.",
+   "FIELD7": "Parkside"
+ },
+ {
+   "number": "1",
+   "name": "Libby Baeza",
+   "pos": "G",
+   "FIELD4": "Sr.",
+   "FIELD5": "5-10",
+   "FIELD6": "Irvine, Calif.",
+   "FIELD7": "Arnold O. Beckman"
+ },
+ {
+   "number": "2",
+   "name": "Lily Dunbar",
+   "pos": "D",
+   "FIELD4": "Fr.",
+   "FIELD5": "5-4",
+   "FIELD6": "Columbia, Md.",
+   "FIELD7": "Wilde Lake"
+ },
+ {
+   "number": "3",
+   "name": "Lauren Currey",
+   "pos": "F/M",
+   "FIELD4": "So.",
+   "FIELD5": "5-7",
+   "FIELD6": "Harrisburg, Pa.",
+   "FIELD7": "Central Dauphin"
+ },
+ {
+   "number": "4",
+   "name": "Natalie Pantalone",
+   "pos": "M/F",
+   "FIELD4": "So.",
+   "FIELD5": "5-7",
+   "FIELD6": "Williamstown, N.J.",
+   "FIELD7": "Williamstown"
+ },
+ {
+   "number": "5",
+   "name": "Gwyn Godin",
+   "pos": "M",
+   "FIELD4": "Jr.",
+   "FIELD5": "5-7",
+   "FIELD6": "Natick, Mass.",
+   "FIELD7": "Natick"
+ },
+ {
+   "number": "6",
+   "name": "Isabel Kuzy",
+   "pos": "F/M",
+   "FIELD4": "Fr.",
+   "FIELD5": "5-5",
+   "FIELD6": "Cinnaminson, N.J.",
+   "FIELD7": "Holy Cross"
+ },
+ {
+   "number": "7",
+   "name": "Josie Schultz",
+   "pos": "M",
+   "FIELD4": "Sr.",
+   "FIELD5": "5-9",
+   "FIELD6": "Havertown, Pa.",
+   "FIELD7": "Haverford"
+ },
+ {
+   "number": "8",
+   "name": "Annalena O'Reilly",
+   "pos": "F/M",
+   "FIELD4": "Fr.",
+   "FIELD5": "5-7",
+   "FIELD6": "Ardmore, Pa.",
+   "FIELD7": "Haverford"
+ },
+ {
+   "number": "9",
+   "name": "Emma Goodrow",
+   "pos": "D",
+   "FIELD4": "Fr.",
+   "FIELD5": "5-9",
+   "FIELD6": "Mahopac, N.Y.",
+   "FIELD7": "Mahopac"
+ },
+ {
+   "number": "10",
+   "name": "Raenah Campbell",
+   "pos": "F",
+   "FIELD4": "Jr.",
+   "FIELD5": "5-9",
+   "FIELD6": "Skaneateles, N.Y.",
+   "FIELD7": "Skaneateles"
+ },
+ {
+   "number": "11",
+   "name": "Ali Shick",
+   "pos": "D/M",
+   "FIELD4": "Sr.",
+   "FIELD5": "5-8",
+   "FIELD6": "York, Pa.",
+   "FIELD7": "Dallastown Area"
+ },
+ {
+   "number": "12",
+   "name": "Morgan Rees",
+   "pos": "F/M",
+   "FIELD4": "So.",
+   "FIELD5": "5-7",
+   "FIELD6": "Ardmore, Pa.",
+   "FIELD7": "Harriton"
+ },
+ {
+   "number": "13",
+   "name": "Shannon Riordan",
+   "pos": "D",
+   "FIELD4": "Jr.",
+   "FIELD5": "5-7",
+   "FIELD6": "Littleton, Mass.",
+   "FIELD7": "Littleton"
+ },
+ {
+   "number": "14",
+   "name": "Kailey Horton",
+   "pos": "F",
+   "FIELD4": "Fr.",
+   "FIELD5": "5-8",
+   "FIELD6": "Meadowbrook, Pa.",
+   "FIELD7": "Abington"
+ },
+ {
+   "number": "15",
+   "name": "Emily Baeza",
+   "pos": "D",
+   "FIELD4": "Sr.",
+   "FIELD5": "5-10",
+   "FIELD6": "Irvine, Calif.",
+   "FIELD7": "Arnold O. Beckman"
+ },
+ {
+   "number": "16",
+   "name": "Melissa Lyon",
+   "pos": "F/M",
+   "FIELD4": "Jr.",
+   "FIELD5": "5-6",
+   "FIELD6": "Perkasie, Pa.",
+   "FIELD7": "Pennridge"
+ },
+ {
+   "number": "17",
+   "name": "Joanna Seca",
+   "pos": "M",
+   "FIELD4": "Jr.",
+   "FIELD5": "5-4",
+   "FIELD6": "North Arlington, N.J.",
+   "FIELD7": "North Arlington"
+ },
+ {
+   "number": "18",
+   "name": "Rory Klingensmith",
+   "pos": "M",
+   "FIELD4": "So.",
+   "FIELD5": "5-8",
+   "FIELD6": "Hummelstown, Pa.",
+   "FIELD7": "Lower Dauphin"
+ },
+ {
+   "number": "19",
+   "name": "Abby Corrato",
+   "pos": "M/D",
+   "FIELD4": "Jr.",
+   "FIELD5": "5-4",
+   "FIELD6": "Marlton, N.J.",
+   "FIELD7": "Cherokee"
+ },
+ {
+   "number": "20",
+   "name": "Caroline Thompson",
+   "pos": "M",
+   "FIELD4": "So.",
+   "FIELD5": "5-5",
+   "FIELD6": "Pottstown, Pa.",
+   "FIELD7": "Owen J. Roberts"
+ },
+ {
+   "number": "21",
+   "name": "Kylie Kutz",
+   "pos": "D",
+   "FIELD4": "Fr.",
+   "FIELD5": "5-10",
+   "FIELD6": "Pottsville, Pa.",
+   "FIELD7": "Blue Mountain"
+ },
+ {
+   "number": "22",
+   "name": "Maggie Daeche",
+   "pos": "D",
+   "FIELD4": "Jr.",
+   "FIELD5": "5-9",
+   "FIELD6": "Langhorne, Pa.",
+   "FIELD7": "Neshaminy"
+ },
+ {
+   "number": "23",
+   "name": "Shea Tomlinson",
+   "pos": "D",
+   "FIELD4": "Jr.",
+   "FIELD5": "5-5",
+   "FIELD6": "Flourtown, Pa.",
+   "FIELD7": "Gwynedd Mercy Academy"
+ },
+ {
+   "number": "25",
+   "name": "Gabrielle Perrotto",
+   "pos": "M",
+   "FIELD4": "Fr.",
+   "FIELD5": "5-8",
+   "FIELD6": "Bryn Mawr, Pa.",
+   "FIELD7": "Phoenixville"
+ },
+ {
+   "number": "26",
+   "name": "Morayo Adenegan",
+   "pos": "D",
+   "FIELD4": "So.",
+   "FIELD5": "6-0",
+   "FIELD6": "Baltimore, Md.",
+   "FIELD7": "Notre Dame Preparatory School"
+ },
+ {
+   "number": "27",
+   "name": "Maria Garofolo",
+   "pos": "M",
+   "FIELD4": "Sr.",
+   "FIELD5": "6-0",
+   "FIELD6": "Barto, Pa.",
+   "FIELD7": "Boyertown"
+ },
+ {
+   "number": "28",
+   "name": "Hannah Klevins",
+   "pos": "M",
+   "FIELD4": "Jr.",
+   "FIELD5": "5-3",
+   "FIELD6": "Westminster, Md.",
+   "FIELD7": "Winters Mill"
+ },
+ {
+   "number": "Image",
+   "name": "Name",
+   "pos": "Title",
+   "FIELD4": "",
+   "FIELD5": "",
+   "FIELD6": "",
+   "FIELD7": ""
+ },
+ {
+   "number": "<img data-src=\"/images/2017/8/14/Goon_Ray_DUStaffHeads17_33.JPG?width=50\" alt=\"Goon_Ray\" class=\"lazyload\">",
+   "name": "Ray Goon",
+   "pos": "Head Women's Soccer Coach",
+   "FIELD4": "",
+   "FIELD5": "",
+   "FIELD6": "",
+   "FIELD7": ""
+ },
+ {
+   "number": "<img data-src=\"/images/2012/8/14/Overmier.jpg?width=50\" alt=\"Don\" class=\"lazyload\">",
+   "name": "Don Overmier",
+   "pos": "Associate Head Women's Soccer Coach",
+   "FIELD4": "",
+   "FIELD5": "",
+   "FIELD6": "",
+   "FIELD7": ""
+ },
+ {
+   "number": "<img data-src=\"/images/2019/8/16/Matt_Perrella_Web.jpg?width=50\" alt=\"\" class=\"lazyload\">",
+   "name": "Matt Perrella",
+   "pos": "Assistant Women's Soccer Coach",
+   "FIELD4": "",
+   "FIELD5": "",
+   "FIELD6": "",
+   "FIELD7": ""
+ },
+ {
+   "number": "",
+   "name": "Chris Cattaneo",
+   "pos": "Volunteer Assistant Women's Soccer Coach",
+   "FIELD4": "",
+   "FIELD5": "",
+   "FIELD6": "",
+   "FIELD7": ""
+ }
+]

@@ -117,7 +117,8 @@
 
     function changePreset(selectObj) {
         var player = teamData[selectObj.selectedIndex];
-        $('#title').val(player.name);
+		var title = `#${player.number} ${player.name}`
+        $('#title').val(title);
         $('#caption').val(player.pos);
     }
 

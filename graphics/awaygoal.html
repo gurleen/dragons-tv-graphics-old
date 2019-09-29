@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DragonsTV GFX</title>
+	<link rel="stylesheet" type="text/css" href="combined.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		nodecg.listenFor('toggleGraphic', message => {
+			toggleVisible(message);
+			nodecg.log.info(message);
+		});
+
+		function toggleVisible(id) {
+			id = `#${id}`;
+			if($(id).hasClass('active')) {
+				$(id).removeClass('active').addClass('inactive');
+			}
+			else {
+				$(id).removeClass('inactive').addClass('active');
+			}
+		}
+	
+	</script>
+</head>
+
+<body>
+	<div id="AWAY_GOAL_IMAGE" class="view slideLeft"><img id="AWAY_GOAL_GFX" src="img/COFCGoalGraphic.png" /></div>
+</body>
+
+</html>

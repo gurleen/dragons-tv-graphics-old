@@ -79,6 +79,13 @@
             currentPeriod.value = newPeriod;
             $('#period').text(newPeriod);
         });
+		
+		nodecg.listenFor('endOfPeriod', () => {
+			console.log('fired!')
+			var newPeriod = $('#periodInput').val();
+            currentPeriod.value = newPeriod;
+            $('#period').text(newPeriod);
+		});
     </script>
 
 </body>

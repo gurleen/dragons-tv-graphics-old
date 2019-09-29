@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="combined.css">
 	<script src="bower_components/easytimer.js/dist/easytimer.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 	<script type="text/javascript">
 
 
@@ -25,8 +26,8 @@
 
 			liveDataRep.on('change', (newValue, oldValue) => {
 				$('#TIMER').text(newValue.clockStr);
-				$('#HOME_SCORE').text(newValue.homeScore);
-				$('#AWAY_SCORE').text(newValue.awayScore);
+				$('.HOME_SCORE').text(newValue.homeScore);
+				$('.AWAY_SCORE').text(newValue.awayScore);
 				$('#PERIOD').text(newValue.period);
 			})
 
@@ -63,6 +64,7 @@
 				$("#CUSTOMIMAGE").attr("src",newValue);
 			});
 
+			/*
 			imageAnimation.on('change', (newValue, oldValue) => {
 				let newClasses = "view "
 				if ($("#IMAGE").hasClass("active")) {
@@ -70,8 +72,8 @@
 				}
 				$("#IMAGE").attr("class", newClasses + newValue);
 			});
+			*/
 		});
-
 
 		nodecg.listenFor('toggleGraphic', message => {
 			toggleVisible(message);
@@ -106,6 +108,8 @@
 </head>
 <body>
 	<div id="view" class="scorebug testing-off">
+		
+	
 		<div id="SCOREBUG" class="view slideLeft">
 			<div class="team" id="HOME" style="background-color: #07294D">
 				<div id="HOME_IMG" class="img" style="background-image: url('https://drexel.edu/~/media/Images/identity/athletics/athletics_primary.ashx?la=en')" ></div>
@@ -123,19 +127,20 @@
 				</div>
 			</div>
 
-			<div class="team scorebug_visible" id="AWAY" style="background-color: #006633">
-				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/f/f8/George_Mason_Patriots_logo.svg')"> </div>
+			<div class="team scorebug_visible" id="AWAY" style="background-color: #76232F">
+				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/College_of_Charleston_Cougars_logo.svg/1200px-College_of_Charleston_Cougars_logo.svg.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFF" class="text scorebug_visible">
 					<div id="AWAY_SCORE" class="score AWAY_SCORE">0</div>
-					<div id="AWAY_NAME" color="#450084" class="name">MASON</div>
+					<div id="AWAY_NAME" color="#450084" class="name">COFC</div>
 				</div>
 			</div>
 		</div>
+		
 
 
 		<div id="MATCHUP" class="view fade">
 			<div class="shadow padded upper matchup_visible">
-				<span id="DATE">September 17, 2019</span> <span class="separator">&mdash;</span> Philadelphia, PA
+				<span id="DATE">September 29, 2019</span> <span class="separator">&mdash;</span> Philadelphia, PA
 			</div>
 			<div class="team" id="HOME" style="background-color: #07294D">
 				<div id="HOME_IMG" class="img" style="background-image: url('https://drexel.edu/~/media/Images/identity/athletics/athletics_primary.ashx?la=en')" ></div>
@@ -144,16 +149,16 @@
 					<div class="title">DRAGONS</div>
 				</div>
 			</div>
-			<div class="team" id="AWAY" style="background-color: #006633">
-				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/f/f8/George_Mason_Patriots_logo.svg')"> </div>
+			<div class="team" id="AWAY" style="background-color: #76232F">
+				<div id="AWAY_IMG" class="img" style="background-image: url('assets/cofcwide.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFFFFF" class="text">
-					<div id="AWAY_NAME" color="#450084" class="name">GEORGE MASON</div>
-					<div id="AWAY_TITLE" class="title" color="#FFC600">PATRIOTS</div>
+					<div id="AWAY_NAME" color="#450084" class="name">CHARLESTON</div>
+					<div id="AWAY_TITLE" class="title" color="#FFC600">COUGARS</div>
 				</div>
 			</div>
 			<div class="grey padded">
 				<div class="matchup_visible padded">
-					<div id="GAME_NAME" class="upper bigger">Drexel Men's Soccer</div>
+					<div id="GAME_NAME" class="upper bigger">Drexel Women's Soccer</div>
 					<hr>
 					<div id="sponsor">Presented by
 						<img id="SPONSOR_IMG" width="290" src="https://www.cancergoldstandard.org/sites/default/files/organisation/IBC_RGB_Blue_300.png" />
@@ -172,12 +177,12 @@
 				</div>
 			</div>
 
-			<div class="team" id="AWAY" style="background-color: #006633">
-				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/f/f8/George_Mason_Patriots_logo.svg')"> </div>
+			<div class="team" id="AWAY" style="background-color: #76232F">
+				<div id="AWAY_IMG" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/College_of_Charleston_Cougars_logo.svg/1200px-College_of_Charleston_Cougars_logo.svg.png')"> </div>
 				<div id="AWAY_TEXT_COLOR" style="color: #FFFFFF" class="text">
 					<div id="AWAY_SCORE" class="score AWAY_SCORE">0</div>
-					<div id="AWAY_NAME" class="name">GEORGE MASON</div>
-					<div id="AWAY_TITLE" class="title">PATRIOTS</div>
+					<div id="AWAY_NAME" class="name">CHARLESTON</div>
+					<div id="AWAY_TITLE" class="title">COUGARS</div>
 				</div>
 			</div>
 
@@ -203,10 +208,10 @@
 			</div>
 		</div>
 
-		<div id="AWAY_LOWER_THIRD" style="border-color: #FFCC33" class="view slideUp">
+		<div id="AWAY_LOWER_THIRD" style="border-color: #FFF" class="view slideUp">
 			<div class="workspace " >
-				<div class="logo" id="LOGO_BG" style="background-color: #006633">
-					<div id="LOGO" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/f/f8/George_Mason_Patriots_logo.svg')" ></div>
+				<div class="logo" id="LOGO_BG" style="background-color: #76232F">
+					<div id="LOGO" class="img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/College_of_Charleston_Cougars_logo.svg/1200px-College_of_Charleston_Cougars_logo.svg.png')" ></div>
 				</div>
 				<div class="padded">
 					<div id="BOTTOM_TEXT" class="BOTTOM_TEXT">CAPTION</div>
@@ -215,7 +220,7 @@
 				<div class="SECONDARY_TEXT">Secondary Text</div>
 			</div>
 		</div>
-
-		<div id="IMAGE" class="view grow"><img id="CUSTOMIMAGE" src="half_stats.png" /></div></div>
+		<div id="IMAGE" class="view slideUp"><img id="CUSTOMIMAGE" src="img/half_stats.png" /></div>
+		</div>
 </body>
 </html>

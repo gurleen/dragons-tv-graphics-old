@@ -7,7 +7,7 @@ module.exports = function (nodecg) {
 	// HOME LTH DATA
 	var currentPath = process.cwd();
 	console.log(currentPath);
-	let rawData = fs.readFileSync('bundles/dutv-graphics-package/extension/team-info/drexel/mens_soccer.json');
+	let rawData = fs.readFileSync('bundles/dutv-graphics-package/extension/team-info/drexel/womens_soccer.json');
 	let homeTeam = JSON.parse(rawData);
 	const homeTeamRep = nodecg.Replicant('homeTeam');
 	homeTeamRep.value = homeTeam;
@@ -26,9 +26,35 @@ module.exports = function (nodecg) {
 	const liveDataRep = nodecg.Replicant('liveData');
 	nodecg.log.info(`Watching for file changes on ${liveData}`)
 	fs.watch(liveData, (curr, prev) => {
-		liveDataRep.value = JSON.parse(fs.readFileSync(liveData));
-		// nodecg.log.info('New score data!');
-		// nodecg.log.info(liveDataRep.value.clockStr);
+		try {
+			var newData = JSON.parse(fs.readFileSync(liveData));
+			if(newData.homeScore > liveDataRep.value.homeScore) {
+				console.log('Home team scored!');
+				nodecg.sendMessage('toggleGraphic', 'HOME_GOAL_IMAGE');
+				setTimeout(() => {
+					liveDataRep.value = newData;
+					nodecg.sendMessage('toggleGraphic', 'HOME_GOAL_IMAGE');
+				}, 4000);
+			}
+			else if(newData.awayScore > liveDataRep.value.awayScore) {
+				console.log('Away team scored!');
+				nodecg.sendMessage('toggleGraphic', 'AWAY_GOAL_IMAGE');
+				setTimeout(() => {
+					liveDataRep.value = newData;
+					nodecg.sendMessage('toggleGraphic', 'AWAY_GOAL_IMAGE');
+				}, 4000);
+			}
+			else if(newData.clockStr == '00:00') {
+				console.log('fired');
+				nodecg.sendMessage('endOfPeriod');
+				liveDataRep.value = newData;
+			}
+			else {
+				liveDataRep.value = newData;
+			}
+		} catch (err) {
+			console.log('err');
+		}
 	});
 
 	const imageList = nodecg.Replicant('imageList');

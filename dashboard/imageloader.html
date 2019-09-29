@@ -66,6 +66,10 @@
         nodecg.sendMessage('toggleGraphic', 'IMAGE');
         imageButton.toggle();
     });
+	
+	nodecg.listenFor('customImageLoaded', () => {
+		$('#current').text('CUSTOM IMAGE LOADED');
+	});
 </script>
 
 </body>

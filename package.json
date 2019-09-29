@@ -55,11 +55,28 @@
         "width": 3,
         "file": "imageloader.html",
         "headerColor": "#525F78"
+      },
+	  {
+        "name": "custom-image",
+        "title": "Custom Image",
+        "width": 3,
+        "file": "customimage.html",
+        "headerColor": "#525F78"
       }
     ],
     "graphics": [
       {
         "file": "index.html",
+        "width": 1920,
+        "height": 1080
+      },
+	  {
+        "file": "homegoal.html",
+        "width": 1920,
+        "height": 1080
+      },
+	  {
+        "file": "awaygoal.html",
         "width": 1920,
         "height": 1080
       }
