@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>DragonsTV AE Demo</title>
+	<script
+	src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+	integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+	crossorigin="anonymous"></script>
+	<script src="../lottieTools.js"></script>
+	<script src="../lottie.min.js"></script>
+</head>
+
+<body>
+	<div id="bm"></div>
+	<script>
+		const liveDataRep = nodecg.Replicant('liveData', 'dutv-graphics-package');
+		liveDataRep.on('change', (newVal, oldVal) => {
+			updateText("Game Clock", newVal.gameClock);
+			updateText("Home Score", newVal.homeScore);
+			updateText("Away Score", newVal.awayScore);
+			updateText("Shot Clock", newVal.shotClock);
+		});
+
+		const toggleAnim = nodecg.Replicant('toggleAnim');
+		toggleAnim.on('change', (newValue, oldValue) => {
+			console.log(newValue);
+			if(newValue) {play();}
+			else {stop();}
+		});
+		
+		const currentPeriod = nodecg.Replicant("currentPeriod", 'dutv-graphics-package');
+		currentPeriod.on('change', (newValue, oldValue) => {
+			if(newValue) {period(newValue);}
+		});
+	
+		var animData = {
+			startFrame : 0,
+			endFrame : 269,
+			loopStartFrame : 200,
+			loopEndFrame : 205
+		}
+
+		initAnimation("data.json", animData);
+		play();
+	</script>
+</body>
+
+</html>
